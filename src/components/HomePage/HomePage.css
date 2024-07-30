@@ -1,0 +1,118 @@
+.HomePage {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-left: 90px;
+  margin-right: 90px;
+  height: auto;
+}
+.no-items-msg {
+  color: white;
+  font-size: 35px;
+}
+
+.product-name {
+  color: white;
+  font-size: clamp(2px, 2px + 1rem, 3rem);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.card {
+  flex-basis: 200px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+
+  width: 220px;
+  height: 440px;
+  margin-left: 3px;
+  margin-right: 3px;
+
+  background-color: #1d1a23;
+}
+
+.align-count {
+  position: absolute;
+  bottom: 65px;
+  display: flex;
+  flex-direction: row;
+}
+
+.decrease-count {
+  width: 30px;
+  height: 30px;
+  background-color: #403966;
+  color: white;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #403966;
+  border-bottom: 1px solid #403966;
+  color: white;
+  width: 120px;
+  height: 28.5px;
+  user-select: none;
+}
+
+.increase-count {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #403966;
+  color: white;
+
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.count-font {
+  position: absolute;
+  top: -19px;
+  left: 8px;
+}
+
+.add-to-basket {
+  position: absolute;
+  bottom: 15px;
+  width: 180px;
+  height: 35px;
+  background-color: #d32262;
+  color: white;
+  font-size: 17px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.add-to-basket:hover {
+  background-color: #7239bd;
+}
+
+.product-price {
+  position: absolute;
+  bottom: 85px;
+  color: #d32262;
+  font-size: 20px;
+}
+
+.product-image {
+  width: 165px;
+  height: 220px;
+  margin-top: 10px;
+  user-select: none;
+}
+
+li {
+  color: white;
+}

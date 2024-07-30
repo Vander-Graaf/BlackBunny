@@ -1,0 +1,92 @@
+/* Basket.css */
+.basket {
+  margin-left: 110px;
+  margin-right: 110px;
+  padding: 20px;
+}
+
+.your-basket {
+  color: white;
+}
+
+.basket h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.basket-list {
+  list-style: none;
+  padding: 0;
+}
+
+.basket-item {
+  width: 800px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #1d1a23;
+  border-bottom: 3px solid #d32262;
+  padding-bottom: 20px;
+}
+
+.basket-item-image {
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.sub-text-basket {
+  color: white;
+}
+
+.basket-item-details {
+  flex: 1;
+}
+
+.basket-item-name {
+  font-size: 1.5rem;
+
+  margin: 0px;
+
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.basket-item-price {
+  font-size: 1.2rem;
+  margin: 0;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.basket-item-quantity {
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.basket-item-total {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin: 0;
+  margin-top: 10px;
+}
+.remove-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  width: 25px;
+  background-color: #d32262;
+  font-size: 20px;
+  color: white;
+  border: 0px;
+  box-shadow: rgba(0, 0, 0, 0.226) 0px 0px 5px 4px;
+  height: 30px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}

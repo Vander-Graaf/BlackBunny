@@ -1,0 +1,65 @@
+.align-sort {
+  display: flex;
+  align-items: center;
+  margin-left: 133px;
+  margin-top: 40px;
+}
+
+.sort-btn {
+  display: flex;
+  align-items: center;
+  width: 190px;
+  background-color: #d32262;
+  font-size: 24px;
+  color: white;
+  border: 0px;
+  box-shadow: rgba(0, 0, 0, 0.226) 0px 0px 5px 4px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sort-btn:hover {
+  background-color: #7239bd;
+}
+
+.sort-btn > h1 {
+  font-size: 24px;
+  margin-left: -10px;
+  margin-right: -10px;
+  width: 190px;
+  color: white;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+
+  background-color: #1d1a23;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  border: 0px;
+  box-shadow: rgba(0, 0, 0, 0.226) 0px 0px 5px 4px;
+  height: 40px;
+  margin-left: 30px;
+  transition: 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: #2e2836;
+}
+
+.filter-arrow {
+  margin-top: 5px;
+}
+
+.filter-btn > h1 {
+  width: 100%;
+
+  font-size: 24px;
+  margin: 0;
+  margin-right: 10px;
+
+  color: white;
+}
