@@ -4,20 +4,52 @@ import SortButtons from "../SortButtons/SortButtons.jsx";
 import "./HomePage.css";
 import axios from "axios";
 
+// Create a context for all images in the ProductsPhoto directory
+const images = import.meta.glob("../../assets/ProductsPhoto/*.png");
+
+const getImagePath = async (imageName) => {
+  const path = `../../assets/ProductsPhoto/${imageName}.png`;
+  if (images[path]) {
+    const image = await images[path]();
+    return image.default;
+  }
+  console.error(`Image not found: ${imageName}`);
+  return "/default.png"; // Ensure default.png is in the public directory
+};
+
 function HomePage({ setBasket }) {
   const [products, setProducts] = useState([]);
   const [counters, setCounters] = useState({});
+  const [imagePaths, setImagePaths] = useState({});
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get("http://127.0.0.1:5000/products");
         setProducts(response.data);
+
         const initialCounters = response.data.reduce((acc, product) => {
           acc[product._id] = 1;
           return acc;
         }, {});
         setCounters(initialCounters);
+
+        const loadImages = async () => {
+          const imagesPromises = response.data.map(async (product) => {
+            const imagePath = await getImagePath(product.image);
+            return { id: product._id, src: imagePath };
+          });
+
+          const loadedImages = await Promise.all(imagesPromises);
+          const imagesMap = loadedImages.reduce((acc, { id, src }) => {
+            acc[id] = src;
+            return acc;
+          }, {});
+
+          setImagePaths(imagesMap);
+        };
+
+        loadImages();
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -66,9 +98,9 @@ function HomePage({ setBasket }) {
                 <img
                   className="product-image"
                   draggable="false"
-                  src={"../../public/" + product.image + ".png"}
+                  src={imagePaths[product._id] || "/default.png"} // Fallback to a default image if not found
                   width="100px"
-                  alt=""
+                  alt={product.productname}
                 />
                 <h1 className="product-name">{product.productname}</h1>
                 <h2 className="product-price">{product.price} ₽</h2>
