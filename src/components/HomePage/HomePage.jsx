@@ -66,7 +66,7 @@ function HomePage({ setBasket }) {
                 <img
                   className="product-image"
                   draggable="false"
-                  src={"../../../public/ProductsPhoto/" + product.image + ".png"}
+                  src={"../../public/" + product.image + ".png"}
                   width="100px"
                   alt=""
                 />
