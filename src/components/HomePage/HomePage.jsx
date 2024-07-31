@@ -5,16 +5,11 @@ import "./HomePage.css";
 import axios from "axios";
 
 // Create a context for all images in the ProductsPhoto directory
-const images = import.meta.glob("../../assets/ProductsPhoto/*.png");
+const images = import.meta.glob("/src/assets/ProductsPhoto/*.png");
 
-const getImagePath = async (imageName) => {
-  const path = `../../assets/ProductsPhoto/${imageName}.png`;
-  if (images[path]) {
-    const image = await images[path]();
-    return image.default;
-  }
-  console.error(`Image not found: ${imageName}`);
-  return "/default.png"; // Ensure default.png is in the public directory
+const getImagePath = (imageName) => {
+  const path = `/src/assets/ProductsPhoto/${imageName}.png`;
+  return images[path] ? images[path]() : "/default.png"; // Use default.png for fallback
 };
 
 function HomePage({ setBasket }) {
@@ -37,7 +32,7 @@ function HomePage({ setBasket }) {
         const loadImages = async () => {
           const imagesPromises = response.data.map(async (product) => {
             const imagePath = await getImagePath(product.image);
-            return { id: product._id, src: imagePath };
+            return { id: product._id, src: imagePath.default || imagePath };
           });
 
           const loadedImages = await Promise.all(imagesPromises);
@@ -100,7 +95,7 @@ function HomePage({ setBasket }) {
                   draggable="false"
                   src={imagePaths[product._id] || "/default.png"} // Fallback to a default image if not found
                   width="100px"
-                  alt={product.productname}
+                  alt=""
                 />
                 <h1 className="product-name">{product.productname}</h1>
                 <h2 className="product-price">{product.price} ₽</h2>
