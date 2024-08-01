@@ -20,7 +20,7 @@ function HomePage({ setBasket }) {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://blackbunny.onrender.com/products");
+        const response = await axios.get("https://blackbunny-backend.onrender.com/products");
         setProducts(response.data);
 
         const initialCounters = response.data.reduce((acc, product) => {
