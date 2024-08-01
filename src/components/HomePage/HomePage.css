@@ -144,10 +144,18 @@ li {
 }
 
 @media (max-width: 768px) {
+  .no-items-msg {
+    color: white;
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 480px) {
   .card {
     flex-basis: 260px;
+  }
+  .no-items-msg {
+    color: white;
+    font-size: 25px;
   }
 }
