@@ -1,11 +1,21 @@
-.HomePage {
+.Cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   min-width: 100vh;
+  max-width: 150vh;
+
   gap: 10px; /* Space between cards */
   padding: 15px; /* Add padding to the container */
+  margin-top: -20px;
   height: auto;
+}
+.align-cards {
+  display: flex;
+  justify-content: center;
+  min-width: 110vh;
+
+  padding: 20px 10px;
 }
 
 .no-items-msg {
@@ -29,13 +39,14 @@
   align-items: center;
   flex-direction: column;
 
-  width: 220px;
+  width: 660px;
   height: 440px;
+
   margin-top: 15px;
 
   margin-left: 3px auto;
   margin-right: 3px auto;
-  margin: 1px; /* Margin around each card to create space between cards */
+
   background-color: #1d1a23;
 }
 
@@ -129,8 +140,8 @@ li {
 }
 
 @media (max-width: 1024px) {
-  .HomePage {
-    margin-left: 30px;
+  .Cards {
+    max-width: 10000px;
   }
 
   .card {
