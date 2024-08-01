@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  min-width: 110vh;
+
   width: 100%;
   margin-top: 40px;
 }
@@ -39,7 +39,7 @@
   align-items: center;
 
   background-color: #1d1a23;
-  font-size: 24px;
+
   color: white;
   cursor: pointer;
   border: 0px;
@@ -65,4 +65,43 @@
   margin-right: 10px;
 
   color: white;
+}
+
+@media (max-width: 1024px) {
+  .filter-btn {
+    margin-left: 15px;
+  }
+  .filter-btn > h1 {
+    font-size: 22px;
+  }
+  .sort-btn > h1 {
+    font-size: 22px;
+  }
+  .sort-btn {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-btn > h1 {
+    font-size: 21px;
+  }
+  .sort-btn > h1 {
+    font-size: 21px;
+  }
+  .sort-btn {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-btn > h1 {
+    font-size: 18px;
+  }
+  .sort-btn > h1 {
+    font-size: 18px;
+  }
+  .sort-btn {
+    width: 130px;
+  }
 }

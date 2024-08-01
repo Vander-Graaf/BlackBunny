@@ -19,8 +19,9 @@ function HomePage({ setBasket }) {
 
   useEffect(() => {
     const fetchProducts = async () => {
+      // http://127.0.0.1:5000
       try {
-        const response = await axios.get("https://blackbunny-backend.onrender.com/products");
+        const response = await axios.get("http://127.0.0.1:5000/products");
         setProducts(response.data);
 
         const initialCounters = response.data.reduce((acc, product) => {
@@ -32,7 +33,6 @@ function HomePage({ setBasket }) {
         const loadImages = async () => {
           const imagesPromises = response.data.map(async (product) => {
             const imagePath = await getImagePath(product.image);
-
             return { id: product._id, src: imagePath.default || imagePath };
           });
 
@@ -88,7 +88,7 @@ function HomePage({ setBasket }) {
 
       <div className="align-cards">
         {products.length > 0 ? (
-          <ul className="Cards">
+          <div className="Cards">
             {products.map((product) => (
               <div key={product._id} className="card">
                 <div className="image-align">
@@ -119,7 +119,7 @@ function HomePage({ setBasket }) {
                 </button>
               </div>
             ))}
-          </ul>
+          </div>
         ) : (
           <p className="no-items-msg">Нет доступных продуктов.</p>
         )}

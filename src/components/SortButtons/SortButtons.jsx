@@ -19,10 +19,6 @@ function SortButtons() {
           <h1>категория</h1>
           <img className="filter-arrow" src={arrow} alt="" />
         </button>
-        <button className="filter-btn">
-          <h1>наличие</h1>
-          <img className="filter-arrow" src={arrow} alt="" />
-        </button>
       </div>
     </>
   );
