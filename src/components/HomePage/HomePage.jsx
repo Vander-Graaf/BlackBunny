@@ -32,6 +32,7 @@ function HomePage({ setBasket }) {
         const loadImages = async () => {
           const imagesPromises = response.data.map(async (product) => {
             const imagePath = await getImagePath(product.image);
+
             return { id: product._id, src: imagePath.default || imagePath };
           });
 
