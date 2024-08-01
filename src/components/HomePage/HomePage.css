@@ -161,12 +161,10 @@ li {
   }
 
   .product-name {
-    color: white;
     font-size: 18px;
     margin-top: 0px;
     margin-left: 20px;
     margin-right: 20px;
-    text-align: center;
   }
 
   .add-to-basket {
@@ -174,66 +172,37 @@ li {
     bottom: 10px;
     width: 130px;
     height: 35px;
-    background-color: #d32262;
-    color: white;
     font-size: 13px;
-    border: 0px;
-    cursor: pointer;
-    user-select: none;
-    transition: 0.3s;
   }
 
   .align-count {
-    position: absolute;
     bottom: 55px;
-    display: flex;
-    flex-direction: row;
   }
 
   .decrease-count {
     width: 20px;
     height: 20px;
-    background-color: #403966;
-    color: white;
-    border: 0px;
-    cursor: pointer;
-    user-select: none;
   }
   .product-price {
-    position: absolute;
     bottom: 60px;
-    color: #d32262;
     font-size: 20px;
   }
 
   .count {
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid #403966;
-    border-bottom: 1px solid #403966;
-    color: white;
     width: 90px;
     height: 18px;
     font-size: 15px;
-    user-select: none;
   }
   .count-font {
-    position: absolute;
     top: -15px;
     left: 6px;
     font-size: 19px;
   }
 
   .increase-count {
-    position: relative;
     width: 20px;
     height: 20px;
-    background-color: #403966;
-    color: white;
-
     border: 0px;
-    cursor: pointer;
-    user-select: none;
   }
   .product-name {
     font-size: 16px;
