@@ -136,18 +136,37 @@ nav {
 }
 
 @media (max-width: 480px) {
-  .empty-space {
-    width: 25%;
+  nav {
+    height: 30px;
   }
+  .empty-space {
+    width: 70%;
+  }
+  .basket-image {
+    width: 30px;
+  }
+  .basket-count {
+    position: absolute;
+    padding-top: 4px;
 
+    right: -9px;
+    top: -5px;
+    width: 22px;
+    height: 18px;
+    border-radius: 20px;
+    background-color: #d32262;
+    font-size: 15px;
+
+    color: white;
+  }
   .header-btn {
     border-radius: 0px 20px 0px 20px;
     margin-left: -25px;
     margin-left: 15px;
   }
   .header-btn h1 {
-    width: 200px;
-    font-size: 35px;
+    width: 170px;
+    font-size: 25px;
     color: #d82d56;
   }
   .align-header-text {

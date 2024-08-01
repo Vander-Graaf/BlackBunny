@@ -25,7 +25,7 @@ function Header({ basketCount }) {
           <Link to="/basket">
             <button className="header-basket">
               <h1 className="basket-count">{basketCount}</h1>
-              <img src={basketIcon} alt="Basket Icon" />
+              <img src={basketIcon} alt="Basket Icon" className="basket-image" />
             </button>
           </Link>
         </div>
