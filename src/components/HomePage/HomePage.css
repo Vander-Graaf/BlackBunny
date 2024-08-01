@@ -131,46 +131,15 @@ li {
 @media (max-width: 1024px) {
   .HomePage {
     margin-left: 30px;
-    margin-right: 30px;
   }
 
   .card {
-    width: 45%;
+    width: 500px;
   }
 }
 
 @media (max-width: 768px) {
-  .HomePage {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-
-  .card {
-    width: 90%;
-  }
 }
 
 @media (max-width: 480px) {
-  .HomePage {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .card {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .add-to-basket {
-    width: 100%;
-  }
-
-  .count {
-    width: 100px;
-  }
-
-  .product-price {
-    bottom: 70px;
-    font-size: 18px;
-  }
 }
