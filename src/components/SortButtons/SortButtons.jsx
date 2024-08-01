@@ -23,7 +23,6 @@ function SortButtons() {
           <h1>наличие</h1>
           <img className="filter-arrow" src={arrow} alt="" />
         </button>
-        <img src="../../assets/ProductsPhoto/1.png" width="100px" alt="" />
       </div>
     </>
   );

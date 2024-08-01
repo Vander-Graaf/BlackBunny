@@ -20,7 +20,7 @@ function HomePage({ setBasket }) {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://blackbunny-backend.onrender.com/products");
+        const response = await axios.get("http://127.0.0.1:5000/products");
         setProducts(response.data);
 
         const initialCounters = response.data.reduce((acc, product) => {
@@ -52,7 +52,6 @@ function HomePage({ setBasket }) {
 
     fetchProducts();
   }, []);
-
   const increment = (id) => {
     setCounters((prevCounters) => ({
       ...prevCounters,
@@ -85,18 +84,22 @@ function HomePage({ setBasket }) {
   return (
     <>
       <SortButtons />
+
       <div>
         {products.length > 0 ? (
           <ul className="HomePage">
             {products.map((product) => (
               <div key={product._id} className="card">
-                <img
-                  className="product-image"
-                  draggable="false"
-                  src={imagePaths[product._id] || "/default.png"} // Fallback to a default image if not found
-                  width="100px"
-                  alt=""
-                />
+                <div className="image-align">
+                  <img
+                    className="product-image"
+                    draggable="false"
+                    src={imagePaths[product._id] || "/default.png"} // Fallback to a default image if not found
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+
                 <h1 className="product-name">{product.productname}</h1>
                 <h2 className="product-price">{product.price} ₽</h2>
 
