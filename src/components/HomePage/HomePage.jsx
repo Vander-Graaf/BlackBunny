@@ -1,8 +1,9 @@
-// HomePage.js
 import React, { useState, useEffect } from "react";
 import SortButtons from "../SortButtons/SortButtons.jsx";
+import Popup from "../Popup/Popup.jsx";
 import "./HomePage.css";
 import axios from "axios";
+import loadingIcon from "../../assets/loading.gif";
 
 // Create a context for all images in the ProductsPhoto directory
 const images = import.meta.glob("/src/assets/ProductsPhoto/*.png");
@@ -16,12 +17,15 @@ function HomePage({ setBasket }) {
   const [products, setProducts] = useState([]);
   const [counters, setCounters] = useState({});
   const [imagePaths, setImagePaths] = useState({});
+  const [loading, setLoading] = useState(true); // Add loading state
+  const [popupMessage, setPopupMessage] = useState(""); // State for popup message
+  const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
 
   useEffect(() => {
     const fetchProducts = async () => {
-      // http://127.0.0.1:5000
+      setLoading(true); // Set loading to true when starting the fetch
       try {
-        const response = await axios.get("https://blackbunny-backend.onrender.com/products");
+        const response = await axios.get("http://127.0.0.1:5000/products");
         setProducts(response.data);
 
         const initialCounters = response.data.reduce((acc, product) => {
@@ -45,14 +49,17 @@ function HomePage({ setBasket }) {
           setImagePaths(imagesMap);
         };
 
-        loadImages();
+        await loadImages();
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false); // Set loading to false once the fetch is complete
       }
     };
 
     fetchProducts();
   }, []);
+
   const increment = (id) => {
     setCounters((prevCounters) => ({
       ...prevCounters,
@@ -79,15 +86,23 @@ function HomePage({ setBasket }) {
           return [...prevBasket, { id, quantity: counters[id] }];
         }
       });
+      // Show popup when product is added
+      setPopupMessage("Товар добавлен в корзину!");
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 3000); // Hide popup after 3 seconds
     }
   };
 
   return (
     <>
       <SortButtons />
-
+      <Popup message={popupMessage} show={showPopup} onClose={() => setShowPopup(false)} />
       <div className="align-cards">
-        {products.length > 0 ? (
+        {loading ? (
+          <img src={loadingIcon} alt="Loading..." className="loading-message" />
+        ) : products.length > 0 ? (
           <div className="Cards">
             {products.map((product) => (
               <div key={product._id} className="card">
@@ -100,10 +115,8 @@ function HomePage({ setBasket }) {
                     alt=""
                   />
                 </div>
-
                 <h1 className="product-name">{product.productname}</h1>
                 <h2 className="product-price">{product.price} ₽</h2>
-
                 <div className="align-count">
                   <button className="decrease-count" onClick={() => decrement(product._id)}>
                     <h1 className="count-font">-</h1>
@@ -113,7 +126,6 @@ function HomePage({ setBasket }) {
                     <h1 className="count-font">+</h1>
                   </button>
                 </div>
-
                 <button className="add-to-basket" onClick={() => addToBasket(product._id)}>
                   Добавить в корзину
                 </button>

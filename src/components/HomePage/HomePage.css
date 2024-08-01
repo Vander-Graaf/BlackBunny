@@ -7,7 +7,12 @@
   gap: 10px; /* Space between cards */
 
   margin-top: 10px;
+  margin-bottom: 200px;
   height: auto;
+}
+
+.loading-message {
+  margin-top: 130px;
 }
 
 .align-cards {
@@ -35,7 +40,7 @@
   box-sizing: border-box;
   position: relative;
   display: flex;
-
+  border-bottom: 5px solid #d1336d;
   align-items: center;
   flex-direction: column;
 

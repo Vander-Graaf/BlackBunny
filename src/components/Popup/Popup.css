@@ -1,0 +1,39 @@
+/* Popup.css */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 40px;
+
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #1d1a23;
+  color: white;
+  height: 20px;
+  box-shadow: rgba(0, 0, 0, 0.442) 0px 0px 5px 4px;
+  border-bottom: 3px solid #d32262;
+  padding: 20px;
+  border-radius: 10px;
+
+  position: relative;
+  width: 300px;
+}
+
+.popup-content > p {
+  margin: 0;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
