@@ -65,9 +65,11 @@ function ProductPage({ setBasket }) {
 
   if (loading) {
     return (
-      <div className="loading-image-container">
-        <img src={loadingIcon} alt="Loading..." className="loading-message-product" />;
-      </div>
+      <>
+        <div className="loading-image-container">
+          <img src={loadingIcon} alt="Loading..." className="loading-message-product" />;
+        </div>
+      </>
     );
   }
 
