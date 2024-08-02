@@ -24,7 +24,7 @@ function ProductPage({ setBasket }) {
     const fetchProduct = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://127.0.0.1:5000/products/${id}`);
+        const response = await axios.get(`https://blackbunny-backend.onrender.com/products/${id}`);
         const productData = response.data;
         setProduct(productData);
 

@@ -25,7 +25,7 @@ function HomePage({ setBasket }) {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://127.0.0.1:5000/products");
+        const response = await axios.get("https://blackbunny-backend.onrender.com/products");
         setProducts(response.data);
 
         const initialCounters = response.data.reduce((acc, product) => {
