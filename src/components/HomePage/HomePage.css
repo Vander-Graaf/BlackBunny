@@ -14,6 +14,10 @@
 .loading-message {
   margin-top: 130px;
 }
+.no-items-msg-h {
+  font-size: 35px;
+  color: white;
+}
 
 .align-cards {
   display: flex;
@@ -160,10 +164,6 @@ li {
     border-bottom: 3px solid #d1336d;
     height: 350px;
   }
-  .no-items-msg {
-    color: white;
-    font-size: 25px;
-  }
 
   .product-name {
     font-size: 18px;
@@ -218,5 +218,9 @@ li {
   }
   .image-align {
     margin-top: -15px;
+  }
+  .no-items-msg-h {
+    font-size: 25px;
+    color: white;
   }
 }

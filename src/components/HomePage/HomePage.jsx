@@ -146,7 +146,7 @@ function HomePage({ setBasket }) {
             ))}
           </div>
         ) : (
-          <p className="no-items-msg">Нет доступных продуктов.</p>
+          <p className="no-items-msg-h">Нет доступных товаров.</p>
         )}
       </div>
     </>
