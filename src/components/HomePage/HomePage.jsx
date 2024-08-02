@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import SortButtons from "../SortButtons/SortButtons.jsx";
 import Popup from "../Popup/Popup.jsx";
 import "./HomePage.css";
 import axios from "axios";
 import loadingIcon from "../../assets/loading.gif";
 
-// Create a context for all images in the ProductsPhoto directory
 const images = import.meta.glob("/src/assets/ProductsPhoto/*.png");
 
 const getImagePath = (imageName) => {
   const path = `/src/assets/ProductsPhoto/${imageName}.png`;
-  return images[path] ? images[path]() : "/default.png"; // Use default.png for fallback
+  return images[path] ? images[path]() : "/default.png";
 };
 
 function HomePage({ setBasket }) {
   const [products, setProducts] = useState([]);
   const [counters, setCounters] = useState({});
   const [imagePaths, setImagePaths] = useState({});
-  const [loading, setLoading] = useState(true); // Add loading state
-  const [popupMessage, setPopupMessage] = useState(""); // State for popup message
-  const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
+  const [loading, setLoading] = useState(true);
+  const [popupMessage, setPopupMessage] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      setLoading(true); // Set loading to true when starting the fetch
+      setLoading(true);
       try {
-        const response = await axios.get("https://blackbunny-backend.onrender.com/products");
+        const response = await axios.get("http://127.0.0.1:5000/products");
         setProducts(response.data);
 
         const initialCounters = response.data.reduce((acc, product) => {
@@ -53,12 +53,26 @@ function HomePage({ setBasket }) {
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
-        setLoading(false); // Set loading to false once the fetch is complete
+        setLoading(false);
       }
     };
 
     fetchProducts();
   }, []);
+
+  const sortProducts = (criteria, order) => {
+    const sortedProducts = [...products].sort((a, b) => {
+      if (criteria === "price") {
+        return order === "asc" ? a.price - b.price : b.price - a.price;
+      } else if (criteria === "category") {
+        return order === "asc"
+          ? a.productname.localeCompare(b.productname)
+          : b.productname.localeCompare(a.productname);
+      }
+      return 0;
+    });
+    setProducts(sortedProducts);
+  };
 
   const increment = (id) => {
     setCounters((prevCounters) => ({
@@ -86,18 +100,17 @@ function HomePage({ setBasket }) {
           return [...prevBasket, { id, quantity: counters[id] }];
         }
       });
-      // Show popup when product is added
       setPopupMessage("Товар добавлен в корзину!");
       setShowPopup(true);
       setTimeout(() => {
         setShowPopup(false);
-      }, 3000); // Hide popup after 3 seconds
+      }, 3000);
     }
   };
 
   return (
     <>
-      <SortButtons />
+      <SortButtons onSort={sortProducts} />
       <Popup message={popupMessage} show={showPopup} onClose={() => setShowPopup(false)} />
       <div className="align-cards">
         {loading ? (
@@ -106,15 +119,15 @@ function HomePage({ setBasket }) {
           <div className="Cards">
             {products.map((product) => (
               <div key={product._id} className="card">
-                <div className="image-align">
+                <Link to={`/product/${product._id}`} className="image-align">
                   <img
                     className="product-image"
                     draggable="false"
-                    src={imagePaths[product._id] || "/default.png"} // Fallback to a default image if not found
+                    src={imagePaths[product._id] || "/default.png"}
                     width="100px"
                     alt=""
                   />
-                </div>
+                </Link>
                 <h1 className="product-name">{product.productname}</h1>
                 <h2 className="product-price">{product.price} ₽</h2>
                 <div className="align-count">
