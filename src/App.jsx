@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Basket from "./components/Basket/Basket";
-import AdminPage from "./components/AdminPage/AdminPage";
+import AdminPage from "./components/AdminPage/AdminPage.jsx";
 
 function App() {
   const [basket, setBasket] = useState([]); // Initialize basket as an empty array
