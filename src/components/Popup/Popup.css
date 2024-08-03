@@ -1,7 +1,7 @@
 /* Popup.css */
 .popup {
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
   width: 100%;
   margin-top: 40px;
@@ -14,13 +14,12 @@
 }
 
 .popup-content {
-  background: #1d1a23;
+  background: #2b2038;
   color: white;
   height: 20px;
   box-shadow: rgba(0, 0, 0, 0.583) 0px 0px 15px 15px;
   border-bottom: 3px solid #d32262;
   padding: 20px;
-  border-radius: 10px;
 
   position: relative;
   width: 300px;

@@ -1,0 +1,455 @@
+.align-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+}
+
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 210px;
+  background-color: #2b2038;
+}
+
+.login-input {
+  background-color: #2b2038;
+  border: 0px;
+  height: 30px;
+  border-bottom: 2px solid #d32262;
+  color: white;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.login-input::placeholder {
+  font-size: 15px;
+  padding: 15px;
+}
+input:focus {
+  border: 1px solid #96406000;
+}
+
+.login-text {
+  font-size: 20px;
+  color: white;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.password-enter-btn {
+  width: 180px;
+  height: 35px;
+  background-color: #d32262;
+  color: white;
+  font-size: 17px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.error-message {
+  color: red;
+  font-weight: 700px;
+  margin: 0px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.edit-modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 700px;
+  height: 400px;
+  padding: 30px;
+  background-color: #2b2038;
+  border-bottom: 3px solid #d32262;
+  border-top: 3px solid #d32262;
+  box-shadow: rgba(0, 0, 0, 0.309) 0px 0px 15px 15px;
+}
+
+.save-btn:hover {
+  background-color: #7239bd;
+}
+
+.edit-modal > h3 {
+  position: absolute;
+  top: 10px;
+  font-size: 25px;
+  color: white;
+}
+
+.section-name {
+  font-size: 18px;
+  color: white;
+}
+.section-box {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: row;
+  width: 100%;
+  margin-right: 380px;
+  margin-top: 5px;
+}
+
+.save-btn {
+  position: absolute;
+  bottom: 20px;
+  width: 180px;
+  height: 35px;
+  background-color: #d32262;
+  color: white;
+  font-size: 17px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.text-input {
+  background-color: #241a2e;
+  border: 0px;
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+  border-bottom: 2px solid #4c44bc;
+  color: white;
+
+  margin-left: 10px;
+}
+
+.file-input {
+  font-size: 20px;
+
+  bottom: 30px;
+  width: 250px;
+  height: 35px;
+  background-color: #d38c2200;
+  color: white;
+  font-size: 0px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+  z-index: 500;
+}
+
+.section-box > textarea {
+  background-color: #241a2e;
+  border: 0px;
+
+  width: 300px;
+  resize: none;
+  padding: 5px;
+  border-bottom: 2px solid #4c44bc;
+  color: white;
+
+  margin-left: 10px;
+}
+
+.edit-container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.13);
+  backdrop-filter: blur(4px); /* Adjust the blur radius as needed */
+  display: flex;
+}
+
+.file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.fake-btn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+
+  bottom: 20px;
+  width: 250px;
+  height: 35px;
+  background-color: #ffffff19;
+  color: white;
+  font-size: 17px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.image-load-box {
+  position: relative;
+  bottom: -10px;
+}
+.image-btn-name {
+  position: absolute;
+  top: -5px;
+  width: 250px;
+  text-align: center;
+
+  font-size: 17px;
+  color: white;
+}
+
+.product-price-edit {
+  color: #d32262;
+  font-size: 27px;
+  margin: 10px;
+}
+
+.product-name-edit {
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.product-image-edit {
+  width: 170px;
+  border-radius: 20px;
+  margin-top: 10px;
+
+  user-select: none;
+}
+
+.edit-btn {
+  position: absolute;
+  bottom: 20px;
+  width: 140px;
+
+  height: 35px;
+  background-color: #d32262;
+  color: white;
+  font-size: 17px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.edit-delete-btn {
+  position: absolute;
+  bottom: 70px;
+  width: 140px;
+  height: 35px;
+  background-color: #d32262;
+  color: white;
+  font-size: 17px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.new-btn {
+  top: 70px;
+  width: 160px;
+  height: 35px;
+  background-color: #d32262;
+  color: white;
+  font-size: 17px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.edit-title {
+  color: white;
+}
+.align-add-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.cancel-btn {
+  position: absolute;
+  top: 70px;
+  width: 120px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.083);
+  color: white;
+  font-size: 17px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .redact-title {
+    position: absolute;
+    top: 50px;
+    margin-top: 210px;
+    color: red;
+  }
+  .cancel-btn {
+    position: absolute;
+    top: 270px;
+    width: 120px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.083);
+    color: white;
+    font-size: 17px;
+    border: 0px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+  }
+
+  .edit-modal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+
+    background-color: #2b2038;
+    border-bottom: 3px solid #d32262;
+    border-top: 3px solid #d32262;
+    box-shadow: rgba(0, 0, 0, 0.309) 0px 0px 15px 15px;
+  }
+  .section-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: row;
+    width: 100%;
+    margin: 0px;
+
+    margin-top: 5px;
+  }
+
+  .save-btn {
+    position: absolute;
+    bottom: 250px;
+    width: 180px;
+    height: 35px;
+    background-color: #d32262;
+    color: white;
+    font-size: 17px;
+    border: 0px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+  }
+  #little-align {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  #little-align {
+    margin-left: 0px;
+  }
+  .product-price-edit {
+    color: #d32262;
+    font-size: 23px;
+    margin: 10px;
+  }
+
+  .product-name-edit {
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px;
+  }
+
+  .product-image-edit {
+    width: 120px;
+    border-radius: 20px;
+    margin-top: 10px;
+
+    user-select: none;
+  }
+
+  .edit-btn {
+    position: absolute;
+    bottom: 20px;
+    width: 120px;
+
+    height: 25px;
+    background-color: #d32262;
+    color: white;
+    font-size: 17px;
+    border: 0px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+  }
+
+  .edit-delete-btn {
+    position: absolute;
+    bottom: 60px;
+    width: 120px;
+    height: 25px;
+    background-color: #d32262;
+    color: white;
+    font-size: 17px;
+    border: 0px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+  }
+  .edit-title {
+    font-size: 25px;
+  }
+
+  .edit-modal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    background-color: #2b2038;
+    border-bottom: 3px solid #d32262;
+    border-top: 3px solid #d32262;
+    box-shadow: rgba(0, 0, 0, 0.309) 0px 0px 15px 15px;
+  }
+
+  .section-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: row;
+    width: 90%;
+    margin: 0px;
+
+    margin-top: 5px;
+  }
+}

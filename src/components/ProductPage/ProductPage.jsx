@@ -1,17 +1,8 @@
-// ProductPage.jsx
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import loadingIcon from "../../assets/loading.gif";
 import "./ProductPage.css";
-
-// Create a context for all images in the ProductsPhoto directory
-const images = import.meta.glob("/src/assets/ProductsPhoto/*.png");
-
-const getImagePath = (imageName) => {
-  const path = `/src/assets/ProductsPhoto/${imageName}.png`;
-  return images[path] ? images[path]() : "/default.png"; // Use default.png for fallback
-};
 
 function ProductPage({ setBasket }) {
   const { id } = useParams(); // Use useParams to get the product ID from the URL
@@ -28,8 +19,8 @@ function ProductPage({ setBasket }) {
         const productData = response.data;
         setProduct(productData);
 
-        const imagePath = await getImagePath(productData.image);
-        setImagePath(imagePath.default || imagePath);
+        // Set the image path to the backend URL
+        setImagePath(`https://blackbunny-backend.onrender.com/images/${productData.image}`);
       } catch (error) {
         console.error("Error fetching product data:", error);
       } finally {
@@ -49,7 +40,7 @@ function ProductPage({ setBasket }) {
   };
 
   const addToBasket = () => {
-    if (counter > 0) {
+    if (counter > 0 && product) {
       setBasket((prevBasket) => {
         const existingProductIndex = prevBasket.findIndex((item) => item.id === product._id);
         if (existingProductIndex > -1) {
@@ -65,11 +56,9 @@ function ProductPage({ setBasket }) {
 
   if (loading) {
     return (
-      <>
-        <div className="loading-image-container">
-          <img src={loadingIcon} alt="Loading..." className="loading-message-product" />;
-        </div>
-      </>
+      <div className="loading-image-container">
+        <img src={loadingIcon} alt="Loading..." className="loading-message-product" />
+      </div>
     );
   }
 

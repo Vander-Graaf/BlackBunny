@@ -48,21 +48,21 @@ function Basket({ basket, setBasket }) {
       <div className="basket">
         <h1 className="your-basket">Ваша корзина</h1>
         {loading ? ( // Show loading message if data is being fetched
-          <img src={loadingIcon} alt="" className="loading-message" />
+          <img src={loadingIcon} alt="Loading..." className="loading-message" />
         ) : basketItems.length > 0 ? (
           <div className="basket-list">
             {basketItems.map((item) => (
               <li key={item._id} className="basket-item">
                 <img
                   className="basket-item-image"
-                  src={"../../../public/ProductsPhoto/" + item.image + ".png"}
+                  src={`https://blackbunny-backend.onrender.com/images/${item.image}`} // Update the image path
                   width="100px"
                   alt={item.productname}
                 />
                 <div className="basket-item-details">
                   <h2 className="basket-item-name">{item.productname}</h2>
                   <div className="basket-item-price">
-                    <h1 className="pre-size">стоимость:</h1>
+                    <h1 className="pre-size">Стоимость:</h1>
                     <h2 className="post-size">{item.price} ₽</h2>
                   </div>
                   <div className="basket-item-quantity">

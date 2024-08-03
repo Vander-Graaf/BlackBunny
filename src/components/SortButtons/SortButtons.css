@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
 
-  background-color: #1d1a23;
+  background-color: #2b2038;
 
   color: white;
   cursor: pointer;
@@ -50,7 +50,7 @@
 }
 
 .filter-btn:hover {
-  background-color: #2e2836;
+  background-color: #352744;
 }
 
 .filter-arrow {

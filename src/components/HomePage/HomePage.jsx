@@ -1,22 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import SortButtons from "../SortButtons/SortButtons.jsx";
 import Popup from "../Popup/Popup.jsx";
 import "./HomePage.css";
 import axios from "axios";
 import loadingIcon from "../../assets/loading.gif";
 
-const images = import.meta.glob("/src/assets/ProductsPhoto/*.png");
-
-const getImagePath = (imageName) => {
-  const path = `/src/assets/ProductsPhoto/${imageName}.png`;
-  return images[path] ? images[path]() : "/default.png";
-};
-
 function HomePage({ setBasket }) {
   const [products, setProducts] = useState([]);
   const [counters, setCounters] = useState({});
-  const [imagePaths, setImagePaths] = useState({});
   const [loading, setLoading] = useState(true);
   const [popupMessage, setPopupMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
@@ -33,23 +25,6 @@ function HomePage({ setBasket }) {
           return acc;
         }, {});
         setCounters(initialCounters);
-
-        const loadImages = async () => {
-          const imagesPromises = response.data.map(async (product) => {
-            const imagePath = await getImagePath(product.image);
-            return { id: product._id, src: imagePath.default || imagePath };
-          });
-
-          const loadedImages = await Promise.all(imagesPromises);
-          const imagesMap = loadedImages.reduce((acc, { id, src }) => {
-            acc[id] = src;
-            return acc;
-          }, {});
-
-          setImagePaths(imagesMap);
-        };
-
-        await loadImages();
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -123,9 +98,9 @@ function HomePage({ setBasket }) {
                   <img
                     className="product-image"
                     draggable="false"
-                    src={imagePaths[product._id] || "/default.png"}
+                    src={`https://blackbunny-backend.onrender.com/images/${product.image}`} // Updated path
                     width="100px"
-                    alt=""
+                    alt={product.productname}
                   />
                 </Link>
                 <h1 className="product-name">{product.productname}</h1>
