@@ -234,7 +234,6 @@ input:focus {
   position: absolute;
   bottom: 20px;
   width: 140px;
-
   height: 35px;
   background-color: #d32262;
   color: white;
@@ -250,7 +249,7 @@ input:focus {
   bottom: 70px;
   width: 140px;
   height: 35px;
-  background-color: #d32262;
+  background-color: #3a339d;
   color: white;
   font-size: 17px;
   border: 0px;
@@ -301,14 +300,11 @@ input:focus {
 
 @media (max-width: 768px) {
   .redact-title {
-    position: absolute;
-    top: 50px;
-    margin-top: 210px;
+    margin-top: 50px;
     color: red;
   }
   .cancel-btn {
-    position: absolute;
-    top: 270px;
+    margin-top: 40px;
     width: 120px;
     height: 35px;
     background-color: rgba(255, 255, 255, 0.083);
@@ -348,11 +344,10 @@ input:focus {
   }
 
   .save-btn {
-    position: absolute;
-    bottom: 250px;
+    margin-bottom: 50px;
     width: 180px;
     height: 35px;
-    background-color: #d32262;
+
     color: white;
     font-size: 17px;
     border: 0px;
@@ -400,7 +395,7 @@ input:focus {
     width: 120px;
 
     height: 25px;
-    background-color: #d32262;
+
     color: white;
     font-size: 17px;
     border: 0px;
@@ -414,7 +409,7 @@ input:focus {
     bottom: 60px;
     width: 120px;
     height: 25px;
-    background-color: #d32262;
+
     color: white;
     font-size: 17px;
     border: 0px;

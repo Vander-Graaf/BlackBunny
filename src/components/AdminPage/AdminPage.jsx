@@ -71,6 +71,7 @@ const AdminPage = () => {
   };
 
   const handleSave = async () => {
+    setEditingProduct(null);
     const formData = new FormData();
     for (const key in editingProduct) {
       formData.append(key, editingProduct[key]);
@@ -85,7 +86,7 @@ const AdminPage = () => {
           },
         }
       );
-      setEditingProduct(null);
+
       fetchProducts();
     } catch (error) {
       console.error("Error updating product:", error);
@@ -105,6 +106,7 @@ const AdminPage = () => {
   };
 
   const handleAdd = async () => {
+    setNewProduct(null);
     const formData = new FormData();
     for (const key in newProduct) {
       formData.append(key, newProduct[key]);
@@ -115,7 +117,7 @@ const AdminPage = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      setNewProduct(null);
+
       fetchProducts();
     } catch (error) {
       console.error("Error adding product:", error);
