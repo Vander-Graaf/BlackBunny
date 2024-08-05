@@ -1,29 +1,47 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Basket.css";
 import axios from "axios";
 import loadingIcon from "../../assets/loading.gif";
 
 function Basket({ basket, setBasket }) {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const navigate = useNavigate(); // Hook for navigation
 
   useEffect(() => {
     const fetchProducts = async () => {
-      setLoading(true); // Set loading to true when starting the fetch
+      setLoading(true);
       try {
-        const response = await axios.get("https://blackbunny-backend.onrender.com/products");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
-        setLoading(false); // Set loading to false once the fetch is complete
+        setLoading(false);
       }
     };
 
     fetchProducts();
   }, []);
 
-  // Map product IDs in the basket to their details
+  // Calculate total price
+  useEffect(() => {
+    const calculateTotalPrice = () => {
+      let total = 0;
+      basket.forEach((item) => {
+        const product = products.find((p) => p._id === item.id);
+        if (product) {
+          total += product.price * item.quantity;
+        }
+      });
+      setTotalPrice(total);
+    };
+
+    calculateTotalPrice();
+  }, [basket, products]);
+
   const basketItems = basket.map((item) => {
     const product = products.find((p) => p._id === item.id);
     return {
@@ -34,20 +52,27 @@ function Basket({ basket, setBasket }) {
 
   const removeFromBasket = (id) => {
     const updatedBasket = basket.filter((item) => item.id !== id);
-    setBasket(updatedBasket); // Update the basket state
+    setBasket(updatedBasket);
   };
 
+  const handleCheckout = () => {
+    navigate("/payment", { state: { totalPrice } }); // Pass totalPrice as state
+  };
   return (
     <>
       <div className="payment-align">
         <div className="payment-box">
-          <button className="payment-confirm">Оформить заказ</button>
+          <h1 className="total-cost">Общая стоимость:</h1>
+          <h1 className="total-cost-number">{totalPrice} сом</h1>
+          <button className="payment-confirm" onClick={handleCheckout}>
+            Оформить заказ
+          </button>
         </div>
       </div>
 
       <div className="basket">
         <h1 className="your-basket">Ваша корзина</h1>
-        {loading ? ( // Show loading message if data is being fetched
+        {loading ? (
           <img src={loadingIcon} alt="Loading..." className="loading-message" />
         ) : basketItems.length > 0 ? (
           <div className="basket-list">
@@ -55,7 +80,7 @@ function Basket({ basket, setBasket }) {
               <li key={item._id} className="basket-item">
                 <img
                   className="basket-item-image"
-                  src={`https://blackbunny-backend.onrender.com/images/${item.image}`} // Update the image path
+                  src={`${import.meta.env.VITE_API_BASE_URL}/images/${item.image}`}
                   width="100px"
                   alt={item.productname}
                 />
@@ -63,7 +88,7 @@ function Basket({ basket, setBasket }) {
                   <h2 className="basket-item-name">{item.productname}</h2>
                   <div className="basket-item-price">
                     <h1 className="pre-size">Стоимость:</h1>
-                    <h2 className="post-size">{item.price} ₽</h2>
+                    <h2 className="post-size">{item.price} сом</h2>
                   </div>
                   <div className="basket-item-quantity">
                     <h1 className="pre-size">Количество:</h1>
@@ -71,7 +96,7 @@ function Basket({ basket, setBasket }) {
                   </div>
                   <div className="basket-item-total">
                     <h1 className="pre-size">Итого:</h1>
-                    <h2 className="post-size">{item.price * item.quantity} ₽</h2>
+                    <h2 className="post-size">{item.price * item.quantity} сом</h2>
                   </div>
                   <button className="remove-button" onClick={() => removeFromBasket(item._id)}>
                     X

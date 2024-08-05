@@ -95,6 +95,7 @@ nav {
   padding-bottom: 4px;
   border-bottom: 4px solid #d3226300;
   transition: 0.2s;
+  z-index: 300;
 }
 
 .header-basket:hover {

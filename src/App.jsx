@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage/HomePage";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Basket from "./components/Basket/Basket";
 import AdminPage from "./components/AdminPage/AdminPage.jsx";
+import PaymentPage from "./components/PaymentPage/PaymentPage"; // Ensure this import is correct
 
 function App() {
   const [basket, setBasket] = useState([]); // Initialize basket as an empty array
@@ -19,6 +20,7 @@ function App() {
           <Route path="/product/:id" element={<ProductPage setBasket={setBasket} />} />
           <Route path="/basket" element={<Basket basket={basket} setBasket={setBasket} />} />
           <Route path="/admin" element={<AdminPage />} /> {/* Add AdminPage route */}
+          <Route path="/payment" element={<PaymentPage />} />
         </Routes>
       </div>
     </Router>

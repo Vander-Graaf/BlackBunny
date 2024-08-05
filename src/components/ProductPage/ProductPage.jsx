@@ -15,12 +15,12 @@ function ProductPage({ setBasket }) {
     const fetchProduct = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`https://blackbunny-backend.onrender.com/products/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products/${id}`);
         const productData = response.data;
         setProduct(productData);
 
         // Set the image path to the backend URL
-        setImagePath(`https://blackbunny-backend.onrender.com/images/${productData.image}`);
+        setImagePath(`${import.meta.env.VITE_API_BASE_URL}/images/${productData.image}`);
       } catch (error) {
         console.error("Error fetching product data:", error);
       } finally {
@@ -99,7 +99,7 @@ function ProductPage({ setBasket }) {
         <button className="add-to-basket-page" onClick={addToBasket}>
           Добавить в корзину
         </button>
-        <h2 className="product-price-page">{product.price} ₽</h2>
+        <h2 className="product-price-page">{product.price} сом</h2>
       </div>
     </div>
   );

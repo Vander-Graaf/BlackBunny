@@ -17,7 +17,7 @@ function HomePage({ setBasket }) {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("https://blackbunny-backend.onrender.com/products");
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
         setProducts(response.data);
 
         const initialCounters = response.data.reduce((acc, product) => {
@@ -98,13 +98,13 @@ function HomePage({ setBasket }) {
                   <img
                     className="product-image"
                     draggable="false"
-                    src={`https://blackbunny-backend.onrender.com/images/${product.image}`} // Updated path
+                    src={`${import.meta.env.VITE_API_BASE_URL}/images/${product.image}`} // Updated path
                     width="100px"
                     alt={product.productname}
                   />
                 </Link>
                 <h1 className="product-name">{product.productname}</h1>
-                <h2 className="product-price">{product.price} ₽</h2>
+                <h2 className="product-price">{product.price} сом</h2>
                 <div className="align-count">
                   <button className="decrease-count" onClick={() => decrement(product._id)}>
                     <h1 className="count-font">-</h1>
