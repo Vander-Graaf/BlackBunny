@@ -100,9 +100,7 @@
 }
 
 .count-font {
-  position: absolute;
-  top: -19px;
-  left: 8px;
+  margin: 0px;
 }
 
 .add-to-basket {
@@ -201,12 +199,16 @@ li {
     font-size: 15px;
   }
   .count-font {
-    top: -15px;
+    top: -0px;
     left: 6px;
     font-size: 19px;
+    margin: 0px;
   }
 
   .increase-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20px;
     height: 20px;
     border: 0px;
