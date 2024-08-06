@@ -218,9 +218,18 @@ li {
   .product-image {
     width: 130px;
   }
+
   .image-align {
-    margin-top: -15px;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    align-items: center;
+    height: 173px;
+    background-color: #e43279;
+    border-radius: 20px;
   }
+
   .no-items-msg-h {
     font-size: 25px;
     color: white;

@@ -233,7 +233,6 @@ input:focus {
 .product-image-edit {
   width: 170px;
   border-radius: 20px;
-  margin-top: 10px;
 
   user-select: none;
 }
@@ -390,9 +389,8 @@ input:focus {
   }
 
   .product-image-edit {
-    width: 120px;
+    width: 130px;
     border-radius: 20px;
-    margin-top: 10px;
 
     user-select: none;
   }
