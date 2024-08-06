@@ -3,7 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-
+  max-width: 1200px;
   gap: 10px; /* Space between cards */
 
   margin-top: 10px;
@@ -142,6 +142,8 @@
   margin-top: 15px;
   align-items: center;
   height: 220px;
+  background-color: #e43279;
+  border-radius: 20px;
 }
 
 li {

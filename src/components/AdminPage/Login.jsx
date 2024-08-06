@@ -3,7 +3,7 @@ import React from "react";
 const Login = ({ password, setPassword, handleLogin, error }) => (
   <div className="align-login">
     <div className="login-box">
-      <h2 className="login-text">Страница редактирования</h2>
+      <h2 className="login-text">Панель админа</h2>
       <input
         type="password"
         value={password}

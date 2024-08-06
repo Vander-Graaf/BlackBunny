@@ -12,9 +12,6 @@ function SortButtons({ onSort }) {
 
   return (
     <div className="align-sort">
-      <button className="sort-btn">
-        <h1>Сортировать</h1>
-      </button>
       <button className="filter-btn" onClick={() => handleSortChange("price")}>
         <h1>цена</h1>
         <img className="filter-arrow" src={arrow} alt="" />

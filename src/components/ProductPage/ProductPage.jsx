@@ -68,6 +68,10 @@ function ProductPage({ setBasket }) {
 
   return (
     <div className="product-page-page">
+      <div className="product-name-box">
+        <h1 className="product-name-page">{product.productname}</h1>
+      </div>
+
       <div className="image-align-page">
         <img
           className="product-image-page"
@@ -76,9 +80,6 @@ function ProductPage({ setBasket }) {
           width="200px"
           alt={product.productname}
         />
-      </div>
-      <div className="product-name-box">
-        <h1 className="product-name-page">{product.productname}</h1>
       </div>
 
       <div className="description-box">

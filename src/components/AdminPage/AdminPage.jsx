@@ -3,7 +3,10 @@ import axios from "axios";
 import Login from "./Login";
 import ProductCard from "./ProductCard";
 import ProductForm from "./ProductForm";
+import Order from "./Order.jsx";
+import OrderHistory from "./OrderHistory.jsx";
 import "./AdminPage.css";
+import "./Order.css";
 
 const AdminPage = () => {
   const [password, setPassword] = useState("");
@@ -132,7 +135,7 @@ const AdminPage = () => {
   };
 
   const renderEditProducts = () => (
-    <div>
+    <div className="align-cards-admin">
       <div className="align-add-btn">
         <h2 className="edit-title">Редактирование товара</h2>
         <button onClick={handleNew} className="new-btn">
@@ -175,17 +178,13 @@ const AdminPage = () => {
 
   const renderOrders = () => (
     <div>
-      {/* Content for Orders view */}
-      <h2>Заказы</h2>
-      {/* Add order-related content here */}
+      <Order></Order>
     </div>
   );
 
   const renderOrderHistory = () => (
     <div>
-      {/* Content for Order History view */}
-      <h2>История заказов</h2>
-      {/* Add order history-related content here */}
+      <OrderHistory></OrderHistory>
     </div>
   );
 
@@ -204,9 +203,15 @@ const AdminPage = () => {
     <div>
       {/* Buttons to switch between views */}
       <div className="admin-buttons">
-        <button onClick={() => setCurrentView("editProducts")}>Редактирование товаров</button>
-        <button onClick={() => setCurrentView("orders")}>Заказы</button>
-        <button onClick={() => setCurrentView("orderHistory")}>История заказов</button>
+        <button onClick={() => setCurrentView("editProducts")} className="switch-btn">
+          Редактирование
+        </button>
+        <button onClick={() => setCurrentView("orders")} className="switch-btn">
+          Заказы
+        </button>
+        <button onClick={() => setCurrentView("orderHistory")} className="switch-btn">
+          История заказов
+        </button>
       </div>
 
       {/* Conditional rendering based on the selected view */}
