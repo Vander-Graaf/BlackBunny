@@ -56,7 +56,15 @@ function Basket({ basket, setBasket }) {
   };
 
   const handleCheckout = () => {
-    navigate("/payment", { state: { totalPrice } }); // Pass totalPrice as state
+    navigate("/payment", {
+      state: {
+        totalPrice,
+        basketItems: basket.map((item) => {
+          const product = products.find((p) => p._id === item.id);
+          return { ...product, quantity: item.quantity };
+        }), // Include all product details
+      },
+    });
   };
   return (
     <>

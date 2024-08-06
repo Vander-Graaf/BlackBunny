@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./PaymentPage.css";
 import whatsappIcon from "../../assets/whatsapp.png";
 
 const PaymentPage = () => {
   const location = useLocation();
-  const { totalPrice } = location.state || {};
+  const navigate = useNavigate();
+  const { totalPrice, basketItems } = location.state || {};
 
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -17,12 +18,28 @@ const PaymentPage = () => {
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/orders`, {
         totalPrice,
-        customerName: name, // Update field name to match schema
+        customerName: name,
         address,
         phone,
+        products: basketItems,
       });
-      console.log("Order placed:", response.data);
-      // Handle successful order placement (e.g., show confirmation, redirect)
+
+      const { orderCode, createdAt } = response.data;
+
+      // Save orderCode to localStorage
+      localStorage.setItem("orderCode", orderCode);
+
+      navigate("/check", {
+        state: {
+          orderCode,
+          totalPrice,
+          createdAt,
+          customerName: name,
+          address,
+          phone,
+          products: basketItems,
+        },
+      });
     } catch (err) {
       console.error("Error placing order:", err);
       setError("Ошибка при оформлении заказа. Пожалуйста, попробуйте снова.");
