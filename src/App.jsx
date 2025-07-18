@@ -9,6 +9,7 @@ import Basket from "./components/Basket/Basket";
 import AdminPage from "./components/AdminPage/AdminPage.jsx";
 import PaymentPage from "./components/PaymentPage/PaymentPage";
 import CheckPage from "./components/CheckPage/CheckPage";
+import { Navigate } from "react-router-dom";
 
 function App() {
   const [basket, setBasket] = useState([]); // Initialize basket as an empty array
@@ -21,16 +22,11 @@ function App() {
           <Route path="/" element={<HomePage setBasket={setBasket} />} />
           <Route path="/product/:id" element={<ProductPage setBasket={setBasket} />} />
           <Route path="/basket" element={<Basket basket={basket} setBasket={setBasket} />} />
-
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/check" element={<CheckPage />} />
 
           {/* Хеш-роут только для админки */}
           <Route path="/admin" element={<HashRoute element={<AdminPage />} />} />
-
-          <Route path="/payment" element={<PaymentPage />} />
-          <Route path="/check" element={<CheckPage />} />
-
           {/* Редирект с /#/admin на /admin */}
           <Route path="/#/admin" element={<Navigate to="/admin" replace />} />
         </Routes>
