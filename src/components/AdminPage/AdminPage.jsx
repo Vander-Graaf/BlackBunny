@@ -3,6 +3,7 @@ import axios from "axios";
 import Login from "./Login";
 import ProductCard from "./ProductCard";
 import ProductForm from "./ProductForm";
+import { useNavigate } from "react-router-dom";
 import Order from "./Order.jsx";
 import OrderHistory from "./OrderHistory.jsx";
 import "./AdminPage.css";
@@ -17,6 +18,20 @@ const AdminPage = () => {
   const [error, setError] = useState("");
   const [currentView, setCurrentView] = useState("editProducts"); // State to manage the current view
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Если пользователь заходит по /admin, добавляем хеш
+    if (!window.location.hash) {
+      window.history.replaceState(null, "", "#/admin");
+    }
+
+    // Если заходят по /#/admin, перенаправляем на /admin
+    if (window.location.hash === "#/admin") {
+      navigate("/admin", { replace: true });
+    }
+  }, [navigate]);
+
   const handleLogin = async () => {
     try {
       const response = await axios.post(
@@ -24,11 +39,11 @@ const AdminPage = () => {
         { password }
       );
       //if (response.data.authenticated) {
-        setAuthenticated(true);
-        fetchProducts();
+      setAuthenticated(true);
+      fetchProducts();
       //}
-       //else {
-        setError("Invalid password");
+      //else {
+      setError("Invalid password");
       //}
     } catch (error) {
       console.error("Error during login:", error);

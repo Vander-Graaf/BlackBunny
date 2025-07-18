@@ -1,7 +1,7 @@
 // App.js
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { HashRoute } from "./HashRoute.jsx";
+import { HashRouteHandler } from "./HashRouteHandler.jsx";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
 import ProductPage from "./components/ProductPage/ProductPage";
@@ -16,6 +16,7 @@ function App() {
 
   return (
     <Router>
+      <HashRouteHandler></HashRouteHandler>
       <div className="container">
         <Header basketCount={basket.reduce((acc, item) => acc + item.quantity, 0)} />
         <Routes>
@@ -25,10 +26,7 @@ function App() {
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/check" element={<CheckPage />} />
 
-          {/* Хеш-роут только для админки */}
-          <Route path="/admin" element={<HashRoute element={<AdminPage />} />} />
-          {/* Редирект с /#/admin на /admin */}
-          <Route path="/#/admin" element={<Navigate to="/admin" replace />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </div>
     </Router>
