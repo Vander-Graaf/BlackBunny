@@ -1,6 +1,7 @@
 // App.js
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRoute } from "./HashRoute.jsx";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
 import ProductPage from "./components/ProductPage/ProductPage";
@@ -20,9 +21,18 @@ function App() {
           <Route path="/" element={<HomePage setBasket={setBasket} />} />
           <Route path="/product/:id" element={<ProductPage setBasket={setBasket} />} />
           <Route path="/basket" element={<Basket basket={basket} setBasket={setBasket} />} />
-          <Route path="/admin" element={<AdminPage />} /> {/* Add AdminPage route */}
+
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/check" element={<CheckPage />} />
+
+          {/* Хеш-роут только для админки */}
+          <Route path="/admin" element={<HashRoute element={<AdminPage />} />} />
+
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/check" element={<CheckPage />} />
+
+          {/* Редирект с /#/admin на /admin */}
+          <Route path="/#/admin" element={<Navigate to="/admin" replace />} />
         </Routes>
       </div>
     </Router>
