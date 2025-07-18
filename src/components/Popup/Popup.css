@@ -14,11 +14,11 @@
 }
 
 .popup-content {
-  background: #2b2038;
+  background: #16131c;
   color: white;
   height: 20px;
   box-shadow: rgba(0, 0, 0, 0.583) 0px 0px 15px 15px;
-  border-bottom: 3px solid #d32262;
+  border-bottom: 3px solid #e0a1fd;
   padding: 20px;
 
   position: relative;

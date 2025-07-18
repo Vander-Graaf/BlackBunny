@@ -31,7 +31,7 @@
 }
 
 .product-name {
-  color: white;
+  color: #fffffff7;
   font-size: 18px;
   margin-top: 20px;
   margin-left: 20px;
@@ -44,7 +44,7 @@
   box-sizing: border-box;
   position: relative;
   display: flex;
-  border-bottom: 5px solid #d1336d;
+  border-bottom: 5px solid rgb(140, 91, 238);
   align-items: center;
   flex-direction: column;
 
@@ -52,11 +52,11 @@
   height: 440px;
 
   margin-top: 15px;
-
+  transition: 0.3s;
   margin-left: 3px auto;
   margin-right: 3px auto;
 
-  background-color: #2b2038;
+  background-color: #15111d;
 }
 
 .align-count {
@@ -69,8 +69,8 @@
 .decrease-count {
   width: 30px;
   height: 30px;
-  background-color: #403966;
-  color: white;
+  background-color: #262030;
+  color: rgba(255, 255, 255, 0.688);
   border: 0px;
   cursor: pointer;
   user-select: none;
@@ -79,9 +79,9 @@
 .count {
   display: flex;
   justify-content: center;
-  border-top: 1px solid #403966;
-  border-bottom: 1px solid #403966;
-  color: white;
+  border-top: 1px solid #262030;
+  border-bottom: 1px solid #262030;
+  color: rgba(255, 255, 255, 0.731);
   width: 120px;
   height: 28.5px;
   user-select: none;
@@ -91,8 +91,8 @@
   position: relative;
   width: 30px;
   height: 30px;
-  background-color: #403966;
-  color: white;
+  background-color: #262030;
+  color: rgba(255, 255, 255, 0.653);
 
   border: 0px;
   cursor: pointer;
@@ -108,9 +108,9 @@
   bottom: 15px;
   width: 180px;
   height: 35px;
-  background-color: #d32262;
-  color: white;
-  font-size: 17px;
+  background-color: rgb(140, 91, 238);
+  color: #ffffff;
+  font-size: 20px;
   border: 0px;
   cursor: pointer;
   user-select: none;
@@ -118,13 +118,22 @@
 }
 
 .add-to-basket:hover {
-  background-color: #4642c3;
+  background-color: rgb(165, 127, 240);
+  color: white;
+}
+.card:hover {
+  border-bottom: 5px solid rgb(162, 124, 237);
+}
+.card:hover .add-to-basket {
+  border-radius: 15px;
+  background-color: rgb(152, 109, 237);
+  color: white;
 }
 
 .product-price {
   position: absolute;
   bottom: 85px;
-  color: #d32262;
+  color: #e0a1fd;
   font-size: 20px;
 }
 
@@ -140,7 +149,7 @@
   margin-top: 15px;
   align-items: center;
   height: 220px;
-  background-color: #e43279;
+  background-color: #e0a1fd00;
   border-radius: 20px;
 }
 
@@ -161,7 +170,7 @@ li {
 @media (max-width: 480px) {
   .card {
     flex-basis: 150px;
-    border-bottom: 3px solid #d1336d;
+    border-bottom: 3px solid #e0a1fd;
     height: 350px;
   }
 
@@ -176,8 +185,8 @@ li {
     position: absolute;
     bottom: 10px;
     width: 130px;
-    height: 35px;
-    font-size: 13px;
+    height: 30px;
+    font-size: 17px;
   }
 
   .align-count {
@@ -228,7 +237,7 @@ li {
 
     align-items: center;
     height: 173px;
-    background-color: #e43279;
+
     border-radius: 20px;
   }
 

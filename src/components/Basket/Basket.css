@@ -21,9 +21,9 @@
 
   width: 100%;
   height: 130px;
-  background-color: #2b2038;
+  background-color: #15111d;
   z-index: 2000;
-  border-top: 3px solid #d32262;
+  border-top: 3px solid #e0a1fd;
   box-shadow: rgba(0, 0, 0, 0.471) 0px 0px 5px 4px;
 }
 
@@ -31,17 +31,18 @@
   position: absolute;
   bottom: 30px;
   height: 40px;
-  background-color: #d32262;
+  background-color: #e0a1fd;
   border: 0px;
   width: 240px;
-  color: white;
-  font-size: 23px;
+  color: #15111d;
+  font-size: 25px;
   transition: 0.3s;
   cursor: pointer;
 }
 
 .payment-confirm:hover {
-  background-color: #4642c3;
+  background-color: rgb(140, 91, 238);
+  color: white;
 }
 
 .loading-message {
@@ -62,8 +63,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  background-color: #2b2038;
-  border-bottom: 3px solid #d32262;
+  background-color: #15111d;
+  border-bottom: 3px solid #e0a1fd;
   padding-bottom: 20px;
 }
 
@@ -72,7 +73,7 @@
   font-size: 25px;
 }
 .total-cost-number {
-  color: #d32262;
+  color: #e0a1fd;
   font-size: 25px;
   margin-left: 10px;
   margin-top: 18px;
@@ -115,15 +116,19 @@
   display: flex;
   align-items: center;
   width: 27px;
-  background-color: #d32262;
+  background-color: #e0a1fd;
   font-size: 24px;
-  color: white;
+  color: #2b2038;
   border: 0px;
   box-shadow: rgba(0, 0, 0, 0.226) 0px 0px 5px 4px;
   height: 30px;
   margin-top: 5px;
   cursor: pointer;
   transition: 0.3s;
+}
+.remove-button:hover {
+  background-color: rgb(140, 91, 238);
+  color: white;
 }
 
 .your-basket {
@@ -144,7 +149,7 @@
   margin: 0;
   padding: 0;
 
-  color: #d32262;
+  color: #e0a1fd;
 }
 
 @media (max-width: 1024px) {
@@ -156,7 +161,7 @@
     align-items: center;
     margin-bottom: 20px;
     background-color: #2b2038;
-    border-bottom: 3px solid #d32262;
+    border-bottom: 3px solid #e0a1fd;
     padding-bottom: 20px;
   }
 }
@@ -175,7 +180,7 @@
     margin: 0;
     padding: 0;
 
-    color: #d32262;
+    color: #e0a1fd;
   }
   .basket-item-name {
     width: 160px;
@@ -198,7 +203,7 @@
     align-items: center;
     margin-bottom: 20px;
     background-color: #2b2038;
-    border-bottom: 3px solid #d32262;
+    border-bottom: 3px solid #e0a1fd;
     padding-bottom: 20px;
   }
 }
@@ -217,7 +222,7 @@
     margin: 0;
     padding: 0;
 
-    color: #d32262;
+    color: #e0a1fd;
   }
   .basket-item-name {
     width: 100px;
@@ -241,7 +246,7 @@
     align-items: center;
     margin-bottom: 20px;
     background-color: #2b2038;
-    border-bottom: 3px solid #d32262;
+    border-bottom: 3px solid #e0a1fd;
     padding-bottom: 20px;
   }
 
@@ -250,7 +255,7 @@
     font-size: 20px;
   }
   .total-cost-number {
-    color: #d32262;
+    color: #e0a1fd;
     font-size: 20px;
     margin-left: 5px;
     margin-top: 13px;

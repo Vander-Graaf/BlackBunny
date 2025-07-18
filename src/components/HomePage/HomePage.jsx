@@ -115,7 +115,7 @@ function HomePage({ setBasket }) {
                   </button>
                 </div>
                 <button className="add-to-basket" onClick={() => addToBasket(product._id)}>
-                  Добавить в корзину
+                  в корзину
                 </button>
               </div>
             ))}

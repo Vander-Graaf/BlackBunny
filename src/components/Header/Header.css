@@ -4,12 +4,25 @@ nav {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
-  background: #2b2038;
+  background: #16131c;
 }
-
+.header-logo {
+  background-color: transparent;
+  border: 0px;
+  height: 1px;
+  width: 64px;
+  margin-right: 40px;
+}
+.header-logo img {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  height: 80px;
+  width: 80px;
+}
 .main-text {
   width: 100px;
   color: #3091a7;
@@ -34,7 +47,7 @@ nav {
 .header-btn {
   background-color: transparent;
   border: transparent;
-  background-color: #07081376;
+  background-color: #07081300;
   border-radius: 0px 20px 0px 20px;
   margin-left: -25px;
 }
@@ -42,34 +55,13 @@ nav {
   position: relative;
   display: flex;
   flex-direction: row;
-}
-
-.sub-text {
-  font-size: 16px;
-  width: 150px;
-  color: #de2e98;
-  font-weight: 1000;
-  z-index: 5;
-
-  margin-left: 7px;
-  user-select: none;
-
-  margin-top: 10px;
-}
-
-.sub-text-container {
-  width: 150px;
-  height: 40px;
-  background-color: #07081374;
-  border-radius: 20px 0px 20px 0px;
-  margin-top: 23px;
-  margin-left: 10px;
+  justify-content: center;
 }
 
 .header-btn h1 {
   width: 260px;
   font-size: 45px;
-  color: #d82d56;
+  color: #e0a1fd;
 }
 
 .header-btn:hover {
@@ -87,35 +79,35 @@ nav {
 .header-basket {
   margin-top: 10px;
   margin-right: 10px;
-
+  border-radius: 25px;
   position: relative;
   background-color: transparent;
   border: transparent;
   cursor: pointer;
-  padding-bottom: 4px;
+  padding-bottom: 0px;
   border-bottom: 4px solid #d3226300;
   transition: 0.2s;
   z-index: 300;
 }
 
 .header-basket:hover {
-  border-bottom: 4px solid #d32262;
-  border-radius: 10px;
+  border-bottom: 4px solid #e0a1fd;
+  border-radius: 35px;
 }
 
 .basket-count {
   position: absolute;
   padding-top: 4px;
 
-  right: -9px;
-  top: -5px;
+  right: -3px;
+  top: -0px;
   width: 24px;
   height: 20px;
   border-radius: 20px;
-  background-color: #d32262;
+  background-color: #e0a1fd;
   font-size: 15px;
 
-  color: white;
+  color: #16131c;
 }
 
 .header-basket h1 {
@@ -127,13 +119,24 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .text-column {
-    display: flex;
-    flex-direction: column;
+  nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
-  .sub-text-container {
+
+  .header-logo {
+    background-color: transparent;
+    border: 0px;
+    height: 1px;
+    width: 0px;
+    margin-right: 0px;
+  }
+  .header-logo img {
     position: absolute;
-    display: none;
+    top: -15px;
+    left: -15px;
+    height: 0px;
+    width: 0px;
   }
 }
 
@@ -145,21 +148,18 @@ nav {
     width: 70%;
   }
   .basket-image {
-    width: 30px;
+    width: 40px;
   }
   .basket-count {
     position: absolute;
     padding-top: 4px;
 
-    right: -9px;
-    top: -5px;
+    right: -4px;
+    top: -0px;
     width: 22px;
     height: 18px;
     border-radius: 20px;
-    background-color: #d32262;
     font-size: 15px;
-
-    color: white;
   }
   .header-btn {
     border-radius: 0px 20px 0px 20px;
@@ -169,7 +169,6 @@ nav {
   .header-btn h1 {
     width: 170px;
     font-size: 25px;
-    color: #d82d56;
   }
   .align-header-text {
     margin-left: 100px;

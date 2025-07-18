@@ -11,6 +11,17 @@
 .loading-message-page {
   margin-top: 130px;
 }
+.product-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #16121d;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 25px;
+}
 
 .align-cards {
   display: flex;
@@ -25,7 +36,7 @@
 
 .product-name-page {
   color: white;
-  font-size: 22px;
+  font-size: 25px;
 }
 .product-name-box {
   margin-top: -10px;
@@ -53,8 +64,8 @@
 .decrease-count-page {
   width: 30px;
   height: 30px;
-  background-color: #403966;
-  color: white;
+  background-color: #262030;
+  color: rgba(255, 255, 255, 0.88);
   border: 0px;
   cursor: pointer;
   user-select: none;
@@ -63,9 +74,9 @@
 .count-page {
   display: flex;
   justify-content: center;
-  border-top: 1px solid #403966;
-  border-bottom: 1px solid #403966;
-  color: white;
+  border-top: 1px solid #262030;
+  border-bottom: 1px solid #262030;
+  color: rgba(255, 255, 255, 0.9);
   width: 120px;
   height: 28.5px;
   user-select: none;
@@ -75,8 +86,8 @@
   position: relative;
   width: 30px;
   height: 30px;
-  background-color: #403966;
-  color: white;
+  background-color: #262030;
+  color: rgba(255, 255, 255, 0.91);
 
   border: 0px;
   cursor: pointer;
@@ -88,9 +99,9 @@
   bottom: 15px;
   width: 180px;
   height: 35px;
-  background-color: #d32262;
-  color: white;
-  font-size: 17px;
+  background-color: #e0a1fd;
+  color: #16131c;
+  font-size: 20px;
   border: 0px;
   cursor: pointer;
   user-select: none;
@@ -98,13 +109,14 @@
 }
 
 .add-to-basket-page:hover {
-  background-color: #7239bd;
+  background-color: rgb(140, 91, 238);
+  color: white;
 }
 
 .product-price-page {
   position: absolute;
   bottom: 85px;
-  color: #d32262;
+  color: #e0a1fd;
   font-size: 32px;
 }
 
@@ -133,7 +145,7 @@
 
   height: 170px;
   margin-bottom: 43px;
-  background-color: #2b2038;
+  background-color: #15111d;
 }
 
 .description-box {
@@ -151,14 +163,21 @@
   color: rgba(255, 255, 255, 0.386);
 }
 .product-description-page {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 @media (max-width: 1024px) {
 }
 
 @media (max-width: 768px) {
+  .product-name-page {
+    color: white;
+    font-size: 23px;
+  }
 }
 
 @media (max-width: 480px) {
+  .product-description-page {
+    font-size: 14px;
+  }
 }

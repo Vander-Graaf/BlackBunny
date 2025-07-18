@@ -104,8 +104,8 @@
 .payment-accept {
   width: 350px;
   height: 45px;
-  background-color: #d32262;
-  color: white;
+  background-color: #e0a1fd;
+  color: #1a1826;
   font-size: 22px;
   border: 0px;
   cursor: pointer;
@@ -114,7 +114,8 @@
 }
 
 .payment-accept:hover {
-  background-color: #4642c3;
+  background-color: rgb(140, 91, 238);
+  color: white;
 }
 
 .total-cost-box {

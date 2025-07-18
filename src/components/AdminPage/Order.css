@@ -23,7 +23,7 @@
 }
 
 .switch-btn:hover {
-  background-color: #932e53;
+  background-color: #502e93;
   border-bottom: 2px solid rgb(195, 195, 195);
 }
 
@@ -48,7 +48,7 @@
   align-items: center;
   width: 700px;
   min-height: 350px;
-  background-color: #2b2038;
+  background-color: #15111d;
   margin-top: 30px;
 }
 
@@ -90,7 +90,7 @@
 }
 
 .details-title {
-  color: #d32262;
+  color: #e0a1fd;
   font-size: 17px;
   font-weight: 400;
   margin-top: 0px;
@@ -161,7 +161,7 @@
 }
 
 .red-color {
-  color: #d32262 !important;
+  color: #e0a1fd !important;
 }
 
 .orders-no-items {
