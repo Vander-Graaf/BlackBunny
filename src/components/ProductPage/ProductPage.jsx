@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import loadingIcon from "../../assets/loading.gif";
+import loadingIcon from "../../assets/loading.svg";
 import "./ProductPage.css";
 
 function ProductPage({ setBasket }) {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Basket.css";
 import axios from "axios";
-import loadingIcon from "../../assets/loading.gif";
+import loadingIcon from "../../assets/loading.svg";
 
 function Basket({ basket, setBasket }) {
   const [products, setProducts] = useState([]);

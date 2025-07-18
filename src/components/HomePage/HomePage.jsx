@@ -4,7 +4,7 @@ import SortButtons from "../SortButtons/SortButtons.jsx";
 import Popup from "../Popup/Popup.jsx";
 import "./HomePage.css";
 import axios from "axios";
-import loadingIcon from "../../assets/loading.gif";
+import loadingIcon from "../../assets/loading.svg";
 
 function HomePage({ setBasket }) {
   const [products, setProducts] = useState([]);
