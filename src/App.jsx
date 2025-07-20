@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HashRouteHandler } from "./HashRouteHandler.jsx";
 import Header from "./components/Header/Header";
-import HomePage from "./components/HomePage/HomePage";
-import ProductPage from "./components/ProductPage/ProductPage";
+import HomePage from "./pages/HomePage/HomePage";
+import ProductPage from "./pages/ProductPage/ProductPage.jsx";
 import Basket from "./components/Basket/Basket";
-import AdminPage from "./components/AdminPage/AdminPage.jsx";
-import PaymentPage from "./components/PaymentPage/PaymentPage";
+import AdminPage from "./pages/AdminPage/AdminPage.jsx";
+import PaymentPage from "./pages/PaymentPage/PaymentPage.jsx";
 import CheckPage from "./components/CheckPage/CheckPage";
 import { Navigate } from "react-router-dom";
 

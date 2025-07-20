@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import SortButtons from "../SortButtons/SortButtons.jsx";
-import Popup from "../Popup/Popup.jsx";
+import SortButtons from "../../components/SortButtons/SortButtons.jsx";
+import Popup from "../../components/Popup/Popup.jsx";
 import "./HomePage.css";
 import axios from "axios";
 import loadingIcon from "../../assets/loading.svg";
