@@ -1,6 +1,6 @@
-.align-sort {
+.align-category {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -8,122 +8,131 @@
   margin-top: 40px;
 }
 
-.sort-btn {
+.category-btn {
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: 190px;
-  background-color: #37ff00;
-  font-size: 20px;
-  color: white;
   border: 0px;
-  box-shadow: rgba(0, 0, 0, 0.226) 0px 0px 5px 4px;
-  height: 40px;
-  cursor: pointer;
+  background-color: #15121b;
+  height: 55px;
+  width: 250px;
+  color: #b09eff;
+  transition: 0.3s;
+  border-right: 7px #7a6ad575 solid;
+  border-left: 7px #7a6ad57e solid;
+}
+
+.category-btn:hover {
+  border-right: 7px #7a6ad5 solid;
+  border-left: 7px #7a6ad5 solid;
+}
+
+.category-container {
+  width: 60%;
+  min-width: 750px;
+  max-width: 1000px;
+  min-height: 350px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #15121b;
+  border-right: 7px #7a6ad575 solid;
+  border-left: 7px #7a6ad57e solid;
   transition: 0.3s;
 }
 
-.sort-btn:hover {
-  background-color: #7239bd;
-}
-
-.sort-btn > h1 {
+.category-switcher-btn {
+  width: 30%;
+  height: 60px;
+  padding: 10px;
+  flex: 1 0 25%;
+  color: #ffffffcf;
   font-size: 24px;
-  margin-left: -10px;
-  margin-right: -10px;
-  width: 190px;
-  color: white;
-}
-
-.filter-btn {
-  display: flex;
-  align-items: center;
-
-  background-color: #15111d;
-
-  color: #fffffff7;
-  cursor: pointer;
-  width: auto;
+  background-color: #252135;
   border: 0px;
-
-  border-radius: 10px;
-
-  height: 45px;
-  margin-left: 15px;
-  margin-right: 15px;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
-.filter-btn:hover {
-  background-color: #120e18;
-  border-radius: 0px;
-}
-
-.filter-arrow {
-  width: 15px;
-  margin-top: 5px;
-  padding-right: 15px;
-}
-
-.filter-btn > h1 {
-  width: 100%;
-  padding-left: 10px;
-  font-size: 20px;
-  margin: 0;
-  margin-right: 10px;
+.category-switcher-btn:hover {
+  color: #ffffff;
+  background-color: #7a6ad5;
 }
 
 @media (max-width: 1024px) {
-  .filter-btn {
-    margin-left: 15px;
-    margin-right: 15px;
+  .category-btn {
+    height: 45px;
+    width: 230px;
+
+    font-size: 13px;
   }
-  .filter-btn > h1 {
-    font-size: 22px;
+  .category-container {
+    width: 60%;
+    min-width: 550px;
+    min-height: 350px;
+    padding: 10px;
+    gap: 10px;
   }
-  .sort-btn > h1 {
-    font-size: 22px;
-  }
-  .sort-btn {
-    width: 160px;
+
+  .category-switcher-btn {
+    width: 30%;
+    height: 60px;
+    padding: 10px;
+    flex: 1 0 25%;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .filter-btn > h1 {
-    font-size: 21px;
+  .category-btn {
+    height: 45px;
+    width: 230px;
+
+    font-size: 13px;
   }
-  .sort-btn > h1 {
-    font-size: 21px;
+  .category-container {
+    width: 60%;
+    min-width: 460px;
+
+    min-height: 370px;
+    padding: 10px;
+    gap: 10px;
   }
-  .sort-btn {
-    width: 150px;
+
+  .category-switcher-btn {
+    width: 30%;
+    height: 65px;
+    padding: 10px;
+    flex: 1 0 25%;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 480px) {
-  .filter-btn > h1 {
-    font-size: 18px;
-  }
-  .sort-btn > h1 {
-    font-size: 14px;
-  }
-  .sort-btn {
-    width: 100px;
-  }
-  .align-sort {
-    margin-top: 20px;
-  }
-  .filter-btn {
-    display: flex;
-    align-items: center;
-
-    cursor: pointer;
-    width: auto;
-    border: 0px;
-    box-shadow: rgba(0, 0, 0, 0.226) 0px 0px 5px 4px;
+  .category-btn {
     height: 40px;
-    margin-left: 15px;
-    margin-right: 15px;
-    transition: 0.3s;
+    width: 180px;
+    font-size: 11px;
+    border-right: 4px #7a6ad575 solid;
+    border-left: 4px #7a6ad57e solid;
+  }
+  .category-container {
+    width: 50%;
+    min-width: 250px;
+
+    min-height: 220px;
+    padding: 5px;
+    gap: 5px;
+    border-right: 4px #7a6ad575 solid;
+    border-left: 4px #7a6ad57e solid;
+  }
+
+  .category-switcher-btn {
+    height: 40px;
+    padding: 10px;
+    flex: 1 0 48%;
+    font-size: 13px;
   }
 }

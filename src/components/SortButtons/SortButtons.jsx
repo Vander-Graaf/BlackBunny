@@ -11,15 +11,27 @@ function SortButtons({ onSort }) {
   };
 
   return (
-    <div className="align-sort">
-      <button className="filter-btn" onClick={() => handleSortChange("price")}>
-        <h1>цена</h1>
-        <img className="filter-arrow" src={arrow} alt="" />
+    <div className="align-category">
+      <button className="category-btn" onClick={() => handleSortChange("price")}>
+        <h1>Категории</h1>
       </button>
-      <button className="filter-btn" onClick={() => handleSortChange("category")}>
-        <h1>категория</h1>
-        <img className="filter-arrow" src={arrow} alt="" />
-      </button>
+
+      <div className="category-container">
+        <button className="category-switcher-btn">Для члена</button>
+        <button className="category-switcher-btn">Для вагины</button>
+        <button className="category-switcher-btn">Анальные игрушки</button>
+        <button className="category-switcher-btn">Лубриканты</button>
+        <button className="category-switcher-btn">Эротическое белье</button>
+        <button className="category-switcher-btn">Страпоны</button>
+        <button className="category-switcher-btn">Возбудители</button>
+        <button className="category-switcher-btn">Феромоны</button>
+        <button className="category-switcher-btn">БДСМ и фетиш </button>
+        <button className="category-switcher-btn">Презервативы</button>
+        <button className="category-switcher-btn">Ролевые игры</button>
+        <button className="category-switcher-btn">Все для массажа</button>
+        <button className="category-switcher-btn">Бренды</button>
+        <button className="category-switcher-btn">Для видеочатов</button>
+      </div>
     </div>
   );
 }

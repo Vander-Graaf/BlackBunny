@@ -26,6 +26,17 @@ const ProductForm = ({ product, onChange, onFileChange, onSave, onCancel, title 
           placeholder="Описание"
         />
       </div>
+      <div className="section-box">
+        <h2 className="section-name">Категория:</h2>
+        <input
+          className="text-input"
+          type="text"
+          name="category"
+          value={product.category || ""}
+          onChange={onChange}
+          placeholder="Категория"
+        />
+      </div>
       <div className="section-box" id="little-align">
         <h2 className="section-name">Цена:</h2>
         <input

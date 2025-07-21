@@ -76,7 +76,8 @@ input:focus {
   align-items: center;
   flex-direction: column;
   width: 700px;
-  height: 400px;
+  height: 500px;
+  min-height: 450px;
   padding: 30px;
   background-color: #15111d;
   border-bottom: 3px solid #e0a1fd;
@@ -175,6 +176,7 @@ input:focus {
   background-color: rgba(0, 0, 0, 0.13);
   backdrop-filter: blur(4px); /* Adjust the blur radius as needed */
   display: flex;
+  z-index: 500;
 }
 
 .file-input::-webkit-file-upload-button {

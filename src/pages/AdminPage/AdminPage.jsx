@@ -11,7 +11,13 @@ import { useAdminLogic } from "../../hooks/useAdminLogic";
 const AdminPage = () => {
   const [password, setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState({
+    productname: "",
+    description: "",
+    price: "",
+    category: "",
+    image: null,
+  });
   const [editingProduct, setEditingProduct] = useState(null);
   const [newProduct, setNewProduct] = useState(null);
   const [error, setError] = useState("");
