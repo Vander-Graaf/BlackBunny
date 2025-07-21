@@ -170,7 +170,7 @@ li {
 @media (max-width: 480px) {
   .card {
     flex-basis: 150px;
-    border-bottom: 3px solid #e0a1fd;
+
     height: 350px;
   }
 
