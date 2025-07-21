@@ -22,11 +22,6 @@
   border-left: 7px #7a6ad57e solid;
 }
 
-.category-btn:hover {
-  border-right: 7px #7a6ad5 solid;
-  border-left: 7px #7a6ad5 solid;
-}
-
 .category-container {
   width: 60%;
   min-width: 750px;
@@ -69,7 +64,7 @@
     font-size: 13px;
   }
   .category-container {
-    width: 60%;
+    width: 80%;
     min-width: 550px;
     min-height: 350px;
     padding: 10px;
@@ -81,7 +76,7 @@
     height: 60px;
     padding: 10px;
     flex: 1 0 25%;
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 
@@ -93,7 +88,7 @@
     font-size: 13px;
   }
   .category-container {
-    width: 60%;
+    width: 80%;
     min-width: 460px;
 
     min-height: 370px;
@@ -119,7 +114,7 @@
     border-left: 4px #7a6ad57e solid;
   }
   .category-container {
-    width: 50%;
+    width: 85%;
     min-width: 250px;
 
     min-height: 220px;

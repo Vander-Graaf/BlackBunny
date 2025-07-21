@@ -147,6 +147,9 @@ nav {
   .empty-space {
     width: 70%;
   }
+  .header-btn h1 {
+    margin-left: -30px;
+  }
   .basket-image {
     width: 40px;
   }

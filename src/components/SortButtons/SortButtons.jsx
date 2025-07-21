@@ -12,7 +12,8 @@ function SortButtons({ onSort }) {
 
   return (
     <div className="align-category">
-      <button className="category-btn" onClick={() => handleSortChange("price")}>
+      {/* onClick={() => handleSortChange("price")} */}
+      <button className="category-btn">
         <h1>Категории</h1>
       </button>
 
