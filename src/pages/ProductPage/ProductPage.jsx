@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Footer from "../../components/Footer/Footer.jsx";
 import loadingIcon from "../../assets/loading.svg";
 import "./ProductPage.css";
 
@@ -67,44 +68,47 @@ function ProductPage({ setBasket }) {
   }
 
   return (
-    <div className="product-page-page">
-      <div className="product-box">
-        <div className="product-name-box">
-          <h1 className="product-name-page">{product.productname}</h1>
-        </div>
-
-        <div className="image-align-page">
-          <img
-            className="product-image-page"
-            draggable="false"
-            src={imagePath || "/default.png"} // Fallback to a default image if not found
-            width="200px"
-            alt={product.productname}
-          />
-        </div>
-
-        <div className="description-box">
-          <h1 className="description-title">Описание:</h1>
-          <h1 className="product-description-page">{product.description}</h1>
-        </div>
-
-        <div className="basket-box">
-          <div className="align-count-page">
-            <button className="decrease-count-page" onClick={decrement}>
-              <h1 className="count-font">-</h1>
-            </button>
-            <div className="count-page">{counter}</div>
-            <button className="increase-count-page" onClick={increment}>
-              <h1 className="count-font">+</h1>
-            </button>
+    <>
+      <div className="product-page-page">
+        <div className="product-box">
+          <div className="product-name-box">
+            <h1 className="product-name-page">{product.productname}</h1>
           </div>
-          <button className="add-to-basket-page" onClick={addToBasket}>
-            в корзину
-          </button>
-          <h2 className="product-price-page">{product.price} сом</h2>
+
+          <div className="image-align-page">
+            <img
+              className="product-image-page"
+              draggable="false"
+              src={imagePath || "/default.png"} // Fallback to a default image if not found
+              width="200px"
+              alt={product.productname}
+            />
+          </div>
+
+          <div className="description-box">
+            <h1 className="description-title">Описание:</h1>
+            <h1 className="product-description-page">{product.description}</h1>
+          </div>
+
+          <div className="basket-box">
+            <div className="align-count-page">
+              <button className="decrease-count-page" onClick={decrement}>
+                <h1 className="count-font">-</h1>
+              </button>
+              <div className="count-page">{counter}</div>
+              <button className="increase-count-page" onClick={increment}>
+                <h1 className="count-font">+</h1>
+              </button>
+            </div>
+            <button className="add-to-basket-page" onClick={addToBasket}>
+              в корзину
+            </button>
+            <h2 className="product-price-page">{product.price} сом</h2>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer></Footer>
+    </>
   );
 }
 

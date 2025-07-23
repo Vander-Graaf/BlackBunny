@@ -4,6 +4,7 @@ import SortButtons from "../../components/SortButtons/SortButtons.jsx";
 import Popup from "../../components/Popup/Popup.jsx";
 import "./HomePage.css";
 import axios from "axios";
+import Footer from "../../components/Footer/Footer.jsx";
 import loadingIcon from "../../assets/loading.svg";
 import notLoaded from "../../assets/not-loaded.svg";
 
@@ -129,6 +130,7 @@ function HomePage({ setBasket }) {
           <p className="no-items-msg-h">Нет доступных товаров.</p>
         )}
       </div>
+      <Footer></Footer>
     </>
   );
 }
