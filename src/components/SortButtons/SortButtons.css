@@ -16,7 +16,7 @@
   border: 0px;
   background-color: #15121b;
   height: 55px;
-  width: 250px;
+  width: 450px;
   color: #b09eff;
   transition: 0.3s;
   border-right: 7px #7a6ad575 solid;
@@ -24,16 +24,16 @@
 }
 
 .category-container {
-  width: 60%;
+  width: 95%;
   min-width: 750px;
   max-width: 1000px;
-  min-height: 350px;
-  padding: 10px;
+  height: auto;
+  padding: 5px;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   background-color: #15121b;
   border-right: 7px #7a6ad575 solid;
   border-left: 7px #7a6ad57e solid;
@@ -46,6 +46,7 @@
   padding: 10px;
   flex: 1 0 25%;
   color: #ffffffcf;
+
   font-size: 24px;
   background-color: #252135;
   border: 0px;
@@ -70,11 +71,8 @@
     font-size: 13px;
   }
   .category-container {
-    width: 80%;
+    width: 85%;
     min-width: 550px;
-    min-height: 350px;
-    padding: 10px;
-    gap: 10px;
   }
 
   .category-switcher-btn {
@@ -96,10 +94,6 @@
   .category-container {
     width: 80%;
     min-width: 460px;
-
-    min-height: 370px;
-    padding: 10px;
-    gap: 10px;
   }
 
   .category-switcher-btn {
@@ -123,8 +117,6 @@
     width: 85%;
     min-width: 250px;
 
-    min-height: 220px;
-    padding: 5px;
     gap: 5px;
     border-right: 4px #7a6ad575 solid;
     border-left: 4px #7a6ad57e solid;

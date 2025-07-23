@@ -30,8 +30,6 @@ function SortButtons({ onSort }) {
         <button className="category-switcher-btn">Презервативы</button>
         <button className="category-switcher-btn">Ролевые игры</button>
         <button className="category-switcher-btn">Все для массажа</button>
-        <button className="category-switcher-btn">Бренды</button>
-        <button className="category-switcher-btn">Для видеочатов</button>
       </div>
     </div>
   );

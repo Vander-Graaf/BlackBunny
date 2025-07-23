@@ -2,7 +2,10 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HashRouteHandler } from "./HashRouteHandler.jsx";
+
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer.jsx";
+
 import HomePage from "./pages/HomePage/HomePage";
 import ProductPage from "./pages/ProductPage/ProductPage.jsx";
 import Basket from "./components/Basket/Basket";
@@ -28,6 +31,7 @@ function App() {
 
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
+        <Footer></Footer>
       </div>
     </Router>
   );

@@ -1,0 +1,75 @@
+Footer {
+  width: 100svw;
+  height: 240px;
+  background-color: #16131c;
+}
+Footer h2 {
+  font-size: 25px;
+  color: #b09eff;
+  margin-top: 50px;
+}
+
+.align-text {
+  display: flex;
+  line-height: 10px;
+
+  align-items: center;
+  flex-direction: column;
+}
+
+.whatsapp,
+.telegramm {
+  display: flex;
+  flex-direction: row;
+}
+.whatsapp h3,
+.telegramm h3 {
+  color: #ded7ff;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.whatsapp img,
+.telegramm img {
+  width: 35px;
+  margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  Footer h2 {
+    font-size: 20px;
+
+    margin-top: 45px;
+  }
+  .whatsapp h3,
+  .telegramm h3 {
+    font-size: 15px;
+  }
+
+  .whatsapp img,
+  .telegramm img {
+    width: 24px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  Footer h2 {
+    font-size: 20px;
+
+    margin-top: 45px;
+  }
+  .whatsapp h3,
+  .telegramm h3 {
+    font-size: 12px;
+  }
+
+  .whatsapp img,
+  .telegramm img {
+    width: 16px;
+    margin-right: 10px;
+  }
+}

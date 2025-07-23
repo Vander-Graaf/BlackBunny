@@ -151,6 +151,12 @@
   height: 220px;
   background-color: #e0a1fd00;
   border-radius: 20px;
+  overflow: hidden;
+}
+
+.image-align img {
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 li {

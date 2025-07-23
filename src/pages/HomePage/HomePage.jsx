@@ -5,6 +5,7 @@ import Popup from "../../components/Popup/Popup.jsx";
 import "./HomePage.css";
 import axios from "axios";
 import loadingIcon from "../../assets/loading.svg";
+import notLoaded from "../../assets/not-loaded.svg";
 
 function HomePage({ setBasket }) {
   const [products, setProducts] = useState([]);
@@ -98,6 +99,10 @@ function HomePage({ setBasket }) {
                   <img
                     className="product-image"
                     draggable="false"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = notLoaded;
+                    }}
                     src={`${import.meta.env.VITE_API_BASE_URL}/images/${product.image}`} // Updated path
                     width="100px"
                     alt={product.productname}
