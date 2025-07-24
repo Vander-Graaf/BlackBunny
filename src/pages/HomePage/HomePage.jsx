@@ -88,7 +88,19 @@ function HomePage({ setBasket }) {
 
   return (
     <>
+      <div className="align-greeting">
+        <div className="greeting-msgs">
+          <div>
+            <h1>Добро пожаловать в секс шоп </h1>
+            <h2>BlackBunny!</h2>
+          </div>
+
+          <h3>Мы работаем с 10 утра до 12 ночи</h3>
+        </div>
+      </div>
+
       <SortButtons onSort={sortProducts} />
+
       <Popup message={popupMessage} show={showPopup} onClose={() => setShowPopup(false)} />
       <div className="align-cards">
         {loading ? (

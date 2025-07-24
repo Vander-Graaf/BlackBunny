@@ -1,3 +1,57 @@
+.align-greeting {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.greeting-msgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 30px;
+  background-color: #15121b;
+  width: 85%;
+  max-width: 1010px;
+
+  border-right: 5px #7a6ad547 solid;
+  border-left: 5px #7a6ad547 solid;
+  border-top: 5px #1f1d2d solid;
+  border-bottom: 5px #1f1d2d solid;
+  padding: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.greeting-msgs div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greeting-msgs div h2 {
+  margin-left: 5px;
+}
+
+.greeting-msgs h1 {
+  color: #a39eff;
+  font-size: 18px;
+  margin: 0px;
+}
+
+.greeting-msgs h2 {
+  color: #c0a6f9;
+  font-size: 22px;
+
+  margin: 0px;
+}
+.greeting-msgs h3 {
+  color: #cac5ffc5;
+  font-size: 15px;
+  margin: 0px;
+}
+
 .Cards {
   display: flex;
   justify-content: center;
@@ -170,6 +224,35 @@ li {
 }
 
 @media (max-width: 480px) {
+  .greeting-msgs {
+    line-height: 22px;
+    border-right: 3px #7a6ad547 solid;
+    border-left: 3px #7a6ad547 solid;
+    padding: 10px;
+  }
+  .greeting-msgs div h2 {
+    margin-left: 0px;
+  }
+
+  .greeting-msgs h1 {
+    font-size: 14px;
+    margin: 0px;
+  }
+
+  .greeting-msgs h2 {
+    font-size: 18px;
+    margin: 0px;
+  }
+  .greeting-msgs h3 {
+    font-size: 12px;
+    margin: 0px;
+  }
+
+  .greeting-msgs div {
+    display: flex;
+    flex-direction: column;
+  }
+
   .card {
     flex-basis: 30%;
     min-width: 140px;

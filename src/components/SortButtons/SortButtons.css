@@ -5,7 +5,7 @@
   align-items: center;
 
   width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
   overflow: hidden;
 }
 
@@ -20,8 +20,8 @@
   font-size: 11px;
   color: #b09eff;
   transition: 0.3s;
-  border-right: 7px #7a6ad575 solid;
-  border-left: 7px #7a6ad57e solid;
+  border-right: 5px #7a6ad547 solid;
+  border-left: 5px #7a6ad547 solid;
 }
 
 .category-container {
@@ -36,8 +36,9 @@
   flex-wrap: wrap;
   gap: 5px;
   background-color: #15121b;
-  border-right: 7px #7a6ad575 solid;
-  border-left: 7px #7a6ad57e solid;
+  border-right: 5px #7a6ad547 solid;
+  border-left: 5px #7a6ad547 solid;
+
   transition: 0.3s;
 }
 
@@ -111,16 +112,15 @@
   .category-btn {
     width: 180px;
     font-size: 10px;
-    border-right: 4px #7a6ad575 solid;
-    border-left: 4px #7a6ad57e solid;
+    border-right: 3px #7a6ad547 solid;
+    border-left: 3px #7a6ad547 solid;
   }
   .category-container {
     width: 85%;
     min-width: 200px;
-
     gap: 7px;
-    border-right: 4px #7a6ad575 solid;
-    border-left: 4px #7a6ad57e solid;
+    border-right: 3px #7a6ad547 solid;
+    border-left: 3px #7a6ad547 solid;
   }
 
   .category-switcher-btn {
