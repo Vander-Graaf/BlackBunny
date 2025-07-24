@@ -5,6 +5,7 @@ import Popup from "../../components/Popup/Popup.jsx";
 import "./HomePage.css";
 import axios from "axios";
 import Footer from "../../components/Footer/Footer.jsx";
+import PageSwitcher from "../../components/PageSwitcher/PageSwitcher.jsx";
 import loadingIcon from "../../assets/loading.svg";
 import notLoaded from "../../assets/not-loaded.svg";
 
@@ -105,7 +106,8 @@ function HomePage({ setBasket }) {
                       e.target.src = notLoaded;
                     }}
                     src={`${import.meta.env.VITE_API_BASE_URL}/images/${product.image}`} // Updated path
-                    width="100px"
+                    width="1import PageSwitcher from './../../components/PageSwitcher/PageSwitcher';
+00px"
                     alt={product.productname}
                   />
                 </Link>
@@ -130,6 +132,7 @@ function HomePage({ setBasket }) {
           <p className="no-items-msg-h">Нет доступных товаров.</p>
         )}
       </div>
+      <PageSwitcher></PageSwitcher>
       <Footer></Footer>
     </>
   );

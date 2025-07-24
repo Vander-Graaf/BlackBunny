@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "../../components/OrderQueue/OrderQueue.css";
 import Login from "./AdminLogin.jsx";
 import "./AdminPage.css";
+import Footer from "../../components/Footer/Footer.jsx";
 
 import { createProductHandlers } from "../../utils/AdminPageUtils/ProductHadlers.jsx";
 import { RenderHandler } from "../../utils/AdminPageUtils/RenderHandler.jsx";
@@ -70,25 +71,28 @@ const AdminPage = () => {
   }
 
   return (
-    <div>
-      {/* Buttons to switch between views */}
-      <div className="admin-buttons">
-        <button onClick={() => setCurrentView("editProducts")} className="switch-btn">
-          Редактирование
-        </button>
-        <button onClick={() => setCurrentView("orders")} className="switch-btn">
-          Заказы
-        </button>
-        <button onClick={() => setCurrentView("orderHistory")} className="switch-btn">
-          История заказов
-        </button>
-      </div>
+    <>
+      <div>
+        {/* Buttons to switch between views */}
+        <div className="admin-buttons">
+          <button onClick={() => setCurrentView("editProducts")} className="switch-btn">
+            Редактирование
+          </button>
+          <button onClick={() => setCurrentView("orders")} className="switch-btn">
+            Заказы
+          </button>
+          <button onClick={() => setCurrentView("orderHistory")} className="switch-btn">
+            История заказов
+          </button>
+        </div>
 
-      {/* Conditional rendering based on the selected view */}
-      {currentView === "editProducts" && handleEditProducts()}
-      {currentView === "orders" && handleOrderQueue()}
-      {currentView === "orderHistory" && handleOrderHistory()}
-    </div>
+        {/* Conditional rendering based on the selected view */}
+        {currentView === "editProducts" && handleEditProducts()}
+        {currentView === "orders" && handleOrderQueue()}
+        {currentView === "orderHistory" && handleOrderHistory()}
+      </div>
+      <Footer></Footer>
+    </>
   );
 };
 

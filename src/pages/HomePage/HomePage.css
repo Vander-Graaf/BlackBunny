@@ -33,7 +33,7 @@
 .product-name {
   color: #fffffff7;
   font-size: 18px;
-  margin-top: 20px;
+
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
@@ -50,6 +50,7 @@
 
   width: 160px;
   height: 440px;
+  padding-bottom: 15px;
 
   margin-top: 15px;
   transition: 0.3s;
@@ -60,7 +61,6 @@
 }
 
 .align-count {
-  position: absolute;
   bottom: 65px;
   display: flex;
   flex-direction: row;
@@ -104,13 +104,12 @@
 }
 
 .add-to-basket {
-  position: absolute;
-  bottom: 15px;
   width: 180px;
   height: 35px;
   background-color: rgb(140, 91, 238);
   color: #ffffff;
   font-size: 20px;
+  margin-top: 15px;
   border: 0px;
   cursor: pointer;
   user-select: none;
@@ -131,16 +130,13 @@
 }
 
 .product-price {
-  position: absolute;
-  bottom: 85px;
-  color: #e0a1fd;
+  color: rgb(172, 135, 246);
   font-size: 20px;
 }
 
 .product-image {
   width: 170px;
   border-radius: 20px;
-
   user-select: none;
 }
 
@@ -175,7 +171,8 @@ li {
 
 @media (max-width: 480px) {
   .card {
-    flex-basis: 150px;
+    flex-basis: 30%;
+    min-width: 140px;
 
     height: 350px;
   }
@@ -188,15 +185,16 @@ li {
   }
 
   .add-to-basket {
-    position: absolute;
-    bottom: 10px;
-    width: 130px;
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
     height: 30px;
     font-size: 17px;
   }
 
   .align-count {
     bottom: 55px;
+    width: 100px;
   }
 
   .decrease-count {
@@ -204,12 +202,11 @@ li {
     height: 20px;
   }
   .product-price {
-    bottom: 60px;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .count {
-    width: 90px;
+    width: 100px;
     height: 18px;
     font-size: 15px;
   }
@@ -233,7 +230,9 @@ li {
   }
 
   .product-image {
-    width: 130px;
+    width: 120px;
+    margin-right: 5px;
+    margin-left: 5px;
   }
 
   .image-align {

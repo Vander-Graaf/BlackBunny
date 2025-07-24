@@ -1,4 +1,5 @@
 import React from "react";
+import notLoaded from "../../assets/not-loaded.svg";
 
 const ProductCard = ({ product, onEdit, onDelete }) => (
   <div key={product._id} className="card">
@@ -6,6 +7,10 @@ const ProductCard = ({ product, onEdit, onDelete }) => (
       <img
         className="product-image-edit"
         src={`${import.meta.env.VITE_API_BASE_URL}/images/${product.image}`}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = notLoaded;
+        }}
         width="100px"
         alt={product.productname}
       />

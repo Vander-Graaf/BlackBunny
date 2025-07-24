@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Basket.css";
 import axios from "axios";
 import loadingIcon from "../../assets/loading.svg";
+import notLoaded from "../../assets/not-loaded.svg";
 
 function Basket({ basket, setBasket }) {
   const [products, setProducts] = useState([]);
@@ -89,6 +90,10 @@ function Basket({ basket, setBasket }) {
                 <img
                   className="basket-item-image"
                   src={`${import.meta.env.VITE_API_BASE_URL}/images/${item.image}`}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = notLoaded;
+                  }}
                   width="100px"
                   alt={item.productname}
                 />

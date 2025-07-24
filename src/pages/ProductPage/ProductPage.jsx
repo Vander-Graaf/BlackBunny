@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer/Footer.jsx";
 import loadingIcon from "../../assets/loading.svg";
+import notLoaded from "../../assets/not-loaded.svg";
 import "./ProductPage.css";
 
 function ProductPage({ setBasket }) {
@@ -79,6 +80,10 @@ function ProductPage({ setBasket }) {
             <img
               className="product-image-page"
               draggable="false"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = notLoaded;
+              }}
               src={imagePath || "/default.png"} // Fallback to a default image if not found
               width="200px"
               alt={product.productname}
