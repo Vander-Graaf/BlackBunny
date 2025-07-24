@@ -17,13 +17,14 @@
   bottom: 0px;
   display: flex;
   justify-content: center;
+
   flex-direction: row;
 
   width: 100%;
   height: 130px;
   background-color: #15111d;
   z-index: 2000;
-  border-top: 3px solid #e0a1fd;
+  border-top: 3px solid #8c5bee;
   box-shadow: rgba(0, 0, 0, 0.471) 0px 0px 5px 4px;
 }
 
@@ -31,11 +32,13 @@
   position: absolute;
   bottom: 30px;
   height: 40px;
-  background-color: #e0a1fd;
+  background-color: #8c5bee;
   border: 0px;
-  width: 240px;
-  color: #15111d;
-  font-size: 25px;
+  width: auto;
+  padding-left: 13px;
+  padding-right: 13px;
+  color: #ffffff;
+  font-size: 23px;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -64,7 +67,7 @@
   align-items: center;
   margin-bottom: 20px;
   background-color: #15111d;
-  border-bottom: 3px solid #e0a1fd;
+  border-bottom: 3px solid #8c5bee;
   padding-bottom: 20px;
 }
 
@@ -73,7 +76,7 @@
   font-size: 25px;
 }
 .total-cost-number {
-  color: #e0a1fd;
+  color: #a075f5;
   font-size: 25px;
   margin-left: 10px;
   margin-top: 18px;
@@ -89,9 +92,11 @@
 
 .sub-text-basket {
   color: rgba(255, 255, 255, 0.479);
-  padding: 20px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 15px;
+  width: 30%;
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
   background-color: #2b203800;
   border: 1px solid rgba(255, 255, 255, 0.622);
 }
@@ -116,7 +121,7 @@
   display: flex;
   align-items: center;
   width: 27px;
-  background-color: #e0a1fd;
+  background-color: #a17cec;
   font-size: 24px;
   color: #2b2038;
   border: 0px;
@@ -132,16 +137,23 @@
 }
 
 .your-basket {
-  color: white;
-  font-size: 30px;
-  width: 300px;
-  text-align: center;
-  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px;
+  background-color: #15121b;
+  height: 45px;
+  width: 350px;
+  font-size: 25px;
+  color: #b09eff;
+  transition: 0.3s;
+  border-right: 7px #7a6ad575 solid;
+  border-left: 7px #7a6ad57e solid;
 }
 
 .pre-size {
   font-size: 20px;
-  color: #ffffff67;
+  color: #ffffff96;
   margin: 0;
 }
 .post-size {
@@ -149,19 +161,14 @@
   margin: 0;
   padding: 0;
 
-  color: #e0a1fd;
+  color: #a17cec;
 }
 
 @media (max-width: 1024px) {
   .basket-item {
     width: 768px;
     height: 220px;
-    position: relative;
-    display: flex;
-    align-items: center;
     margin-bottom: 20px;
-    background-color: #2b2038;
-    border-bottom: 3px solid #e0a1fd;
     padding-bottom: 20px;
   }
 }
@@ -172,15 +179,21 @@
   }
   .pre-size {
     font-size: 17px;
-    color: #ffffff67;
     margin: 0;
   }
   .post-size {
     font-size: 17px;
     margin: 0;
     padding: 0;
+  }
 
-    color: #e0a1fd;
+  .total-cost {
+    font-size: 20px;
+  }
+  .total-cost-number {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 14px;
   }
   .basket-item-name {
     width: 160px;
@@ -202,9 +215,17 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #2b2038;
-    border-bottom: 3px solid #e0a1fd;
     padding-bottom: 20px;
+  }
+  .sub-text-basket {
+    font-size: 16px;
+  }
+
+  .payment-confirm {
+    font-size: 20px;
+  }
+  .payment-box {
+    height: 110px;
   }
 }
 
@@ -214,15 +235,12 @@
   }
   .pre-size {
     font-size: 13px;
-    color: #ffffff67;
     margin: 0;
   }
   .post-size {
     font-size: 13px;
     margin: 0;
     padding: 0;
-
-    color: #e0a1fd;
   }
   .basket-item-name {
     width: 100px;
@@ -241,28 +259,28 @@
   .basket-item {
     width: 320px;
     height: 125px;
-    position: relative;
-    display: flex;
-    align-items: center;
     margin-bottom: 20px;
-    background-color: #2b2038;
-    border-bottom: 3px solid #e0a1fd;
     padding-bottom: 20px;
   }
 
   .total-cost {
-    color: white;
-    font-size: 20px;
+    font-size: 16px;
   }
   .total-cost-number {
-    color: #e0a1fd;
-    font-size: 20px;
+    font-size: 16px;
     margin-left: 5px;
-    margin-top: 13px;
+    margin-top: 11px;
   }
 
   .your-basket {
     width: 200px;
     font-size: 20px;
+  }
+
+  .payment-confirm {
+    font-size: 18px;
+  }
+  .payment-box {
+    height: 110px;
   }
 }

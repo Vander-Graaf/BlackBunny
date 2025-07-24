@@ -99,8 +99,8 @@
   bottom: 15px;
   width: 180px;
   height: 35px;
-  background-color: #e0a1fd;
-  color: #16131c;
+  background-color: rgb(140, 91, 238);
+  color: #ffffff;
   font-size: 20px;
   border: 0px;
   cursor: pointer;
@@ -116,7 +116,7 @@
 .product-price-page {
   position: absolute;
   bottom: 85px;
-  color: #e0a1fd;
+  color: rgb(168, 128, 249);
   font-size: 32px;
 }
 

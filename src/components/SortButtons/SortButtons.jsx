@@ -22,12 +22,12 @@ function SortButtons({ onSort }) {
         <button className="category-switcher-btn">Для вагины</button>
         <button className="category-switcher-btn">Анальные игрушки</button>
         <button className="category-switcher-btn">Лубриканты</button>
-        <button className="category-switcher-btn">Эротическое белье</button>
         <button className="category-switcher-btn">Страпоны</button>
+        <button className="category-switcher-btn">Эротическое белье</button>
         <button className="category-switcher-btn">Возбудители</button>
         <button className="category-switcher-btn">Феромоны</button>
-        <button className="category-switcher-btn">БДСМ и фетиш </button>
         <button className="category-switcher-btn">Презервативы</button>
+        <button className="category-switcher-btn">БДСМ и фетиш</button>
         <button className="category-switcher-btn">Ролевые игры</button>
         <button className="category-switcher-btn">Все для массажа</button>
       </div>
