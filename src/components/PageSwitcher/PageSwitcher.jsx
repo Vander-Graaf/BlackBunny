@@ -1,14 +1,20 @@
 import "./PageSwitcher.css";
 
-function PageSwitcher() {
+function PageSwitcher({ currentPage, totalPages, onPageChange }) {
+  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+
   return (
-    <>
-      <div className="align-btns">
-        <button className="active-btn">1</button>
-        <button>2</button>
-        <button>3</button>
-      </div>
-    </>
+    <div className="align-btns">
+      {pages.map((page) => (
+        <button
+          key={page}
+          className={page === currentPage ? "active-btn" : ""}
+          onClick={() => onPageChange(page)}
+        >
+          {page}
+        </button>
+      ))}
+    </div>
   );
 }
 

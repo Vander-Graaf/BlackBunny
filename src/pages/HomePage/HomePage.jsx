@@ -16,28 +16,41 @@ function HomePage({ setBasket }) {
   const [filteredCategory, setFilteredCategory] = useState("");
   const [popupMessage, setPopupMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
+  const fetchProducts = async (page = 1) => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URL}/products?page=${page}&limit=10`
+      );
+      const { products, totalPages, currentPage } = response.data;
+
+      setProducts(products);
+      setTotalPages(totalPages);
+      setCurrentPage(currentPage);
+
+      const initialCounters = products.reduce((acc, product) => {
+        acc[product._id] = 1;
+        return acc;
+      }, {});
+      setCounters(initialCounters);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    fetchProducts(page); // Здесь должен обновиться totalPages и products
+  };
+  // Перезапускаем загрузку при изменении страницы или категории
   useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
-        setProducts(response.data);
-
-        const initialCounters = response.data.reduce((acc, product) => {
-          acc[product._id] = 1;
-          return acc;
-        }, {});
-        setCounters(initialCounters);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
+    fetchProducts(currentPage, filteredCategory);
+  }, [currentPage, filteredCategory]);
 
   const increment = (id) => {
     setCounters((prevCounters) => ({
@@ -73,9 +86,10 @@ function HomePage({ setBasket }) {
     }
   };
 
-  const filteredProducts = filteredCategory
-    ? products.filter((product) => product.category === filteredCategory)
-    : products;
+  const filteredProducts =
+    (filteredCategory
+      ? products.filter((product) => product.category === filteredCategory)
+      : products) || [];
 
   return (
     <>
@@ -109,8 +123,6 @@ function HomePage({ setBasket }) {
                       e.target.src = notLoaded;
                     }}
                     src={`${import.meta.env.VITE_API_BASE_URL}/images/${product.image}`} // Updated path
-                    width="1import PageSwitcher from './../../components/PageSwitcher/PageSwitcher';
-00px"
                     alt={product.productname}
                   />
                 </Link>
@@ -135,7 +147,11 @@ function HomePage({ setBasket }) {
           <p className="no-items-msg-h">Нет доступных товаров.</p>
         )}
       </div>
-      <PageSwitcher></PageSwitcher>
+      <PageSwitcher
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
       <Footer></Footer>
     </>
   );
