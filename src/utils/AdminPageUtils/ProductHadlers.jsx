@@ -50,6 +50,7 @@ export const createProductHandlers = (
   const handleSave = async () => {
     setEditingProduct(null);
     const formData = new FormData();
+    console.log(editingProduct);
     for (const key in editingProduct) {
       formData.append(key, editingProduct[key]);
     }

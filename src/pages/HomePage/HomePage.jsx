@@ -13,6 +13,7 @@ function HomePage({ setBasket }) {
   const [products, setProducts] = useState([]);
   const [counters, setCounters] = useState({});
   const [loading, setLoading] = useState(true);
+  const [filteredCategory, setFilteredCategory] = useState("");
   const [popupMessage, setPopupMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
 
@@ -37,20 +38,6 @@ function HomePage({ setBasket }) {
 
     fetchProducts();
   }, []);
-
-  const sortProducts = (criteria, order) => {
-    const sortedProducts = [...products].sort((a, b) => {
-      if (criteria === "price") {
-        return order === "asc" ? a.price - b.price : b.price - a.price;
-      } else if (criteria === "category") {
-        return order === "asc"
-          ? a.productname.localeCompare(b.productname)
-          : b.productname.localeCompare(a.productname);
-      }
-      return 0;
-    });
-    setProducts(sortedProducts);
-  };
 
   const increment = (id) => {
     setCounters((prevCounters) => ({
@@ -86,6 +73,10 @@ function HomePage({ setBasket }) {
     }
   };
 
+  const filteredProducts = filteredCategory
+    ? products.filter((product) => product.category === filteredCategory)
+    : products;
+
   return (
     <>
       <div className="align-greeting">
@@ -99,15 +90,15 @@ function HomePage({ setBasket }) {
         </div>
       </div>
 
-      <SortButtons onSort={sortProducts} />
+      <SortButtons onCategorySelect={setFilteredCategory} />
 
       <Popup message={popupMessage} show={showPopup} onClose={() => setShowPopup(false)} />
       <div className="align-cards">
         {loading ? (
           <img src={loadingIcon} alt="Loading..." className="loading-message" />
-        ) : products.length > 0 ? (
+        ) : filteredProducts.length > 0 ? (
           <div className="Cards">
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <div key={product._id} className="card">
                 <Link to={`/product/${product._id}`} className="image-align">
                   <img

@@ -28,14 +28,27 @@ const ProductForm = ({ product, onChange, onFileChange, onSave, onCancel, title 
       </div>
       <div className="section-box">
         <h2 className="section-name">Категория:</h2>
-        <input
+        {console.log(product)}
+        <select
           className="text-input"
-          type="text"
           name="category"
           value={product.category || ""}
           onChange={onChange}
-          placeholder="Категория"
-        />
+        >
+          <option value="">Выберите категорию</option>
+          <option value="Для члена">Для члена</option>
+          <option value="Для вагины">Для вагины</option>
+          <option value="Анальные игрушки">Анальные игрушки</option>
+          <option value="Лубриканты">Лубриканты</option>
+          <option value="Страпоны">Страпоны</option>
+          <option value="Эротическое белье">Эротическое белье</option>
+          <option value="Возбудители">Возбудители</option>
+          <option value="Феромоны">Феромоны</option>
+          <option value="Презервативы">Презервативы</option>
+          <option value="БДСМ и фетиш">БДСМ и фетиш</option>
+          <option value="Ролевые игры">Ролевые игры</option>
+          <option value="Все для массажа">Все для массажа</option>
+        </select>
       </div>
       <div className="section-box" id="little-align">
         <h2 className="section-name">Цена:</h2>

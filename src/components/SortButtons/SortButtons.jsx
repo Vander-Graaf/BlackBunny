@@ -1,35 +1,38 @@
 import { useState } from "react";
 import "./SortButtons.css";
-import arrow from "../../assets/arrow.png";
 
-function SortButtons({ onSort }) {
-  const [sortOrder, setSortOrder] = useState("asc"); // "asc" for ascending, "desc" for descending
-
-  const handleSortChange = (criteria) => {
-    setSortOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc"));
-    onSort(criteria, sortOrder === "asc" ? "desc" : "asc");
-  };
+function SortButtons({ onCategorySelect }) {
+  const categories = [
+    "Для члена",
+    "Для вагины",
+    "Анальные игрушки",
+    "Лубриканты",
+    "Страпоны",
+    "Эротическое белье",
+    "Возбудители",
+    "Феромоны",
+    "Презервативы",
+    "БДСМ и фетиш",
+    "Ролевые игры",
+    "Все для массажа",
+  ];
 
   return (
     <div className="align-category">
-      {/* onClick={() => handleSortChange("price")} */}
-      <button className="category-btn">
+      <button className="category-btn" onClick={() => onCategorySelect("")}>
         <h1>Категории</h1>
       </button>
 
       <div className="category-container">
-        <button className="category-switcher-btn">Для члена</button>
-        <button className="category-switcher-btn">Для вагины</button>
-        <button className="category-switcher-btn">Анальные игрушки</button>
-        <button className="category-switcher-btn">Лубриканты</button>
-        <button className="category-switcher-btn">Страпоны</button>
-        <button className="category-switcher-btn">Эротическое белье</button>
-        <button className="category-switcher-btn">Возбудители</button>
-        <button className="category-switcher-btn">Феромоны</button>
-        <button className="category-switcher-btn">Презервативы</button>
-        <button className="category-switcher-btn">БДСМ и фетиш</button>
-        <button className="category-switcher-btn">Ролевые игры</button>
-        <button className="category-switcher-btn">Все для массажа</button>
+        {categories.map((category) => (
+          <button
+            key={category}
+            className="category-switcher-btn"
+            onClick={() => onCategorySelect(category)}
+          >
+            {category}
+          </button>
+        ))}
       </div>
     </div>
   );
