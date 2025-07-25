@@ -16,10 +16,9 @@ export const useAdminLogic = ({ password, setAuthenticated, setError, handleFetc
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/products/admin/login`,
-        { password }
-      );
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/admin/login`, {
+        password,
+      });
       if (response.data.authenticated) {
         setAuthenticated(true);
         handleFetchProducts();
