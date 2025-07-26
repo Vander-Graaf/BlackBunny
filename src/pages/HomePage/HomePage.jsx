@@ -19,11 +19,11 @@ function HomePage({ setBasket }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const fetchProducts = async (page = 1) => {
+  const fetchProducts = async (page = 1, category = "") => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URL}/products?page=${page}&limit=10`
+        `${import.meta.env.VITE_API_BASE_URL}/products?page=${page}&limit=10&category=${category}`
       );
       const { products, totalPages, currentPage } = response.data;
 
@@ -45,7 +45,7 @@ function HomePage({ setBasket }) {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    fetchProducts(page); // Здесь должен обновиться totalPages и products
+    fetchProducts(page, filteredCategory); // Здесь должен обновиться totalPages и products
   };
   // Перезапускаем загрузку при изменении страницы или категории
   useEffect(() => {
