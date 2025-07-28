@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "./OrderQueue.css"; // Ensure this CSS file includes styling for the loading gif
-import loadingIcon from "../../assets/loading.svg";
+import loadingIcon from "../../../../assets/loading.svg";
 
 const Order = ({ onOrderUpdated }) => {
   const [orders, setOrders] = useState([]);

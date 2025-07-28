@@ -16,7 +16,7 @@ function Basket({ basket, setBasket }) {
       setLoading(true);
       try {
         const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
-        setProducts(response.data);
+        setProducts(response.data.products);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {

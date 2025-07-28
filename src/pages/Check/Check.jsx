@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import loadingIcon from "../../assets/loading.svg";
-import "./CheckPage.css";
+import "./Check.css";
 
 const CheckPage = () => {
   const location = useLocation();

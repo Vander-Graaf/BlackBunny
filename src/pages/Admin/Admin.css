@@ -1,72 +1,9 @@
-.align-login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 500px;
-}
-
 .align-cards-admin {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-}
-
-.login-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 300px;
-  height: 210px;
-  background-color: #15111d;
-}
-
-.login-input {
-  background-color: #15111d;
-  border: 0px;
-  height: 30px;
-  border-bottom: 2px solid #e0a1fd;
-  color: white;
-  padding: 5px;
-  margin-bottom: 15px;
-}
-
-.login-input::placeholder {
-  font-size: 15px;
-  padding: 15px;
-}
-input:focus {
-  border: 1px solid #96406000;
-}
-
-.login-text {
-  font-size: 20px;
-  color: white;
-  margin: 0px;
-  margin-bottom: 10px;
-}
-
-.password-enter-btn {
-  width: 180px;
-  height: 35px;
-  background-color: #e0a1fd;
-  color: white;
-  font-size: 17px;
-  border: 0px;
-  cursor: pointer;
-  user-select: none;
-  transition: 0.3s;
-}
-
-.error-message {
-  color: red;
-  font-weight: 700px;
-  margin: 0px;
-  margin-top: 10px;
-  font-size: 16px;
 }
 
 .edit-modal {
@@ -346,17 +283,6 @@ input:focus {
     border-top: 3px solid #e0a1fd;
     box-shadow: rgba(0, 0, 0, 0.309) 0px 0px 15px 15px;
   }
-  .section-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-direction: row;
-    width: 100%;
-    margin: 0px;
-
-    margin-top: 5px;
-  }
 
   .save-btn {
     margin-bottom: 50px;
@@ -448,17 +374,5 @@ input:focus {
     border-bottom: 3px solid #e0a1fd;
     border-top: 3px solid #e0a1fd;
     box-shadow: rgba(0, 0, 0, 0.309) 0px 0px 15px 15px;
-  }
-
-  .section-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-direction: row;
-    width: 90%;
-    margin: 0px;
-
-    margin-top: 5px;
   }
 }

@@ -23,11 +23,11 @@ export const useAdminLogic = ({ password, setAuthenticated, setError, handleFetc
         setAuthenticated(true);
         handleFetchProducts();
       } else {
-        setError("Invalid password");
+        setError("Неверный пароль");
       }
     } catch (error) {
-      console.error("Error during login:", error);
-      setError("An error occurred while logging in.");
+      console.error("Ошибка авторизации:", error);
+      setError("Произошла ошибка при авторизации");
     }
   };
 

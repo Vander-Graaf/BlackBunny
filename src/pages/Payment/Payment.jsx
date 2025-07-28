@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer/Footer.jsx";
-import "./PaymentPage.css";
+import "./Payment.css";
 import whatsappIcon from "../../assets/whatsapp.png";
 
-const PaymentPage = () => {
+const Payment = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { totalPrice, basketItems } = location.state || {};
@@ -118,4 +118,4 @@ const PaymentPage = () => {
   );
 };
 
-export default PaymentPage;
+export default Payment;

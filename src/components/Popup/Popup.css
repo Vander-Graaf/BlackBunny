@@ -1,38 +1,62 @@
 /* Popup.css */
 .popup {
   position: fixed;
-  top: 20px;
+  top: -10px;
   left: 0;
   width: 100%;
-  margin-top: 40px;
-
-  background: rgba(0, 0, 0, 0);
+  transform: translateY(-20px);
+  cursor: default;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 200;
+  z-index: 5000;
+  opacity: 0;
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.popup.show {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.popup.hide {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 .popup-content {
-  background: #16131c;
-  color: white;
-  height: 20px;
-  box-shadow: rgba(0, 0, 0, 0.583) 0px 0px 15px 15px;
-  border-bottom: 3px solid rgb(150, 106, 238);
-  padding: 20px;
+  background: #4f4091;
+  color: rgb(238, 230, 255);
+  border-radius: 5px;
+
+  box-shadow: rgba(0, 0, 0, 0.243) 0px 0px 10px 10px;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
 
   position: relative;
-  width: 300px;
+  width: 450px;
 }
 
 .popup-content > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  font-weight: lighter;
   margin: 0;
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .popup-content > p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
 }

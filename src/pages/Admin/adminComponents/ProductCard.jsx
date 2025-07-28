@@ -1,5 +1,5 @@
 import React from "react";
-import notLoaded from "../../assets/not-loaded.svg";
+import notLoaded from "../../../assets/not-loaded.svg";
 
 const ProductCard = ({ product, onEdit, onDelete }) => (
   <div key={product._id} className="card">

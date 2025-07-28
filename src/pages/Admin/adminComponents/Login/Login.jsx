@@ -1,20 +1,20 @@
-import React from "react";
+import S from "./Login.module.css";
 
 const Login = ({ password, setPassword, handleLogin, error }) => (
-  <div className="align-login">
-    <div className="login-box">
-      <h2 className="login-text">Панель админа</h2>
+  <div className={S.align_container}>
+    <div className={S.container}>
+      <h2>Панель админа</h2>
       <input
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Введите пароль"
-        className="login-input"
+        className={S.password_input}
       />
-      <button onClick={handleLogin} className="password-enter-btn">
+      <button onClick={handleLogin} className={S.submit_btn}>
         Войти
       </button>
-      {error && <p className="error-message">{error}</p>}
+      {error && <p className={S.error_msg}>{error}</p>}
     </div>
   </div>
 );

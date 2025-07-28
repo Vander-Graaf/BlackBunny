@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import "./OrderHistory.css";
-import loadingIcon from "../../assets/loading.svg";
+import "./OrderHistory.module.css";
+import loadingIcon from "../../../../assets/loading.svg";
 
 const OrderHistory = () => {
   const [orders, setOrders] = useState([]);

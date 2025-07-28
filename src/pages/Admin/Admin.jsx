@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-import "../../components/OrderQueue/OrderQueue.css";
-import Login from "./AdminLogin.jsx";
-import "./AdminPage.css";
+import "./adminComponents/OrderQueue/OrderQueue.css";
+import OrderQueue from "./adminComponents/OrderQueue/OrderQueue.jsx";
+import OrderHistory from "./adminComponents/OrderHistory/OrderHistory.jsx";
+import Login from "./adminComponents/Login/Login.jsx";
+import "./Admin.css";
 import Footer from "../../components/Footer/Footer.jsx";
 
 import { createProductHandlers } from "../../utils/AdminPageUtils/ProductHadlers.jsx";
 import { RenderHandler } from "../../utils/AdminPageUtils/RenderHandler.jsx";
-import { useAdminLogic } from "../../hooks/useAdminLogic";
+import { useAdminLogic } from "../../hooks/useAdminLogic.jsx";
 
-const AdminPage = () => {
+const Admin = () => {
   const [password, setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
   const [products, setProducts] = useState([]);
@@ -44,7 +46,7 @@ const AdminPage = () => {
     handleFetchProducts,
   });
 
-  const { handleEditProducts, handleOrderQueue, handleOrderHistory } = RenderHandler({
+  const { handleEditProducts } = RenderHandler({
     products,
     editingProduct,
     newProduct,
@@ -73,7 +75,6 @@ const AdminPage = () => {
   return (
     <>
       <div>
-        {/* Buttons to switch between views */}
         <div className="admin-buttons">
           <button onClick={() => setCurrentView("editProducts")} className="switch-btn">
             Редактирование
@@ -88,12 +89,12 @@ const AdminPage = () => {
 
         {/* Conditional rendering based on the selected view */}
         {currentView === "editProducts" && handleEditProducts()}
-        {currentView === "orders" && handleOrderQueue()}
-        {currentView === "orderHistory" && handleOrderHistory()}
+        {currentView === "orders" && <OrderQueue></OrderQueue>}
+        {currentView === "orderHistory" && <OrderHistory></OrderHistory>}
       </div>
       <Footer></Footer>
     </>
   );
 };
 
-export default AdminPage;
+export default Admin;

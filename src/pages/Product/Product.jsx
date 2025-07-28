@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import "./Product.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+
 import Footer from "../../components/Footer/Footer.jsx";
 import loadingIcon from "../../assets/loading.svg";
 import notLoaded from "../../assets/not-loaded.svg";
-import "./ProductPage.css";
 
-function ProductPage({ setBasket }) {
+function Product({ setBasket }) {
   const { id } = useParams(); // Use useParams to get the product ID from the URL
   const [product, setProduct] = useState(null);
   const [counter, setCounter] = useState(1);
@@ -117,4 +118,4 @@ function ProductPage({ setBasket }) {
   );
 }
 
-export default ProductPage;
+export default Product;

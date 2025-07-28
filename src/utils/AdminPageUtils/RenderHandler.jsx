@@ -1,6 +1,5 @@
-import React from "react";
-import ProductCard from "../../components/ProductCard/ProductCard.jsx";
-import ProductForm from "../../components/ProductForm/ProductForm.jsx";
+import ProductCard from "../../pages/Admin/adminComponents/ProductCard.jsx";
+import ProductForm from "../../pages/Admin/adminComponents/ProductForm.jsx";
 
 export const RenderHandler = ({
   products,
@@ -24,7 +23,6 @@ export const RenderHandler = ({
           Добавить товар
         </button>
       </div>
-
       <div className="Cards">
         {products.map((product) => (
           <ProductCard
@@ -35,7 +33,7 @@ export const RenderHandler = ({
           />
         ))}
       </div>
-
+      cccc
       {editingProduct && (
         <ProductForm
           product={editingProduct}
@@ -46,7 +44,6 @@ export const RenderHandler = ({
           title="Редактирование товара"
         />
       )}
-
       {newProduct && (
         <ProductForm
           product={newProduct}
@@ -60,21 +57,7 @@ export const RenderHandler = ({
     </div>
   );
 
-  const handleOrderQueue = () => (
-    <div>
-      <OrderQueue></OrderQueue>
-    </div>
-  );
-
-  const handleOrderHistory = () => (
-    <div>
-      <OrderHistory></OrderHistory>
-    </div>
-  );
-
   return {
     handleEditProducts,
-    handleOrderQueue,
-    handleOrderHistory,
   };
 };
