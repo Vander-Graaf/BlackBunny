@@ -63,10 +63,8 @@ function Home() {
       />
 
       <div className="align-cards">
-        {loading ? (
-          <img src={loadingIcon} alt="Loading..." className="loading-message" />
-        ) : products.length > 0 ? (
-          <Cards products={products} />
+        {products.length > 0 ? (
+          <Cards products={products} loading={loading} />
         ) : (
           <p className="no-items-msg-h">Нет доступных товаров.</p>
         )}

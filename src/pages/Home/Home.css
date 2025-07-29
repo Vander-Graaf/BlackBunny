@@ -75,7 +75,7 @@
 }
 
 .loading-message {
-  margin-top: 130px;
+  margin-top: 0px;
 }
 .no-items-msg-h {
   font-size: 25px;
@@ -87,9 +87,11 @@
 
 .align-cards {
   display: flex;
-  justify-content: center;
+
   width: 100%;
+  min-height: auto;
   margin-top: 20px;
+  transition: 0.3s;
 }
 
 .product-name {
@@ -113,11 +115,11 @@
   flex-direction: column;
 
   width: 160px;
-  height: auto;
+  height: 400px;
 
   padding-bottom: 15px;
 
-  margin-top: 5px;
+  margin-top: 10px;
   transition: 0.3s;
 
   animation: fadeInUp 0.4s ease forwards;
@@ -174,11 +176,18 @@
 }
 
 .product-image {
-  width: 90%;
+  width: 85%;
   border-radius: 20px;
   margin-top: 10px;
   height: max-content;
   user-select: none;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.product-image.loaded {
+  width: 90%;
+  opacity: 1;
 }
 
 .image-align {
