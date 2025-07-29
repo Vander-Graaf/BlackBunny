@@ -1,5 +1,7 @@
 import S from "./Counters.module.css";
 import { useState, useEffect } from "react";
+import plus from "../../assets/plus.png";
+import minus from "../../assets/minus.png";
 
 function Counters({ product, onChange }) {
   const [count, setCount] = useState(1);
@@ -21,13 +23,13 @@ function Counters({ product, onChange }) {
   }, []);
 
   return (
-    <div className="align-count">
-      <button className="decrease-count" onClick={decrement}>
-        <h1 className="count-font">-</h1>
+    <div className={S.align}>
+      <button className={S.decrease_counter} onClick={decrement}>
+        <img src={minus} alt={minus} />
       </button>
-      <div className="count">{count}</div>
-      <button className="increase-count" onClick={increment}>
-        <h1 className="count-font">+</h1>
+      <div className={S.counter}>{count}</div>
+      <button className={S.increase_counter} onClick={increment}>
+        <img src={plus} alt={plus} />
       </button>
     </div>
   );

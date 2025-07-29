@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./SortButtons.css";
 
-function SortButtons({ onCategorySelect }) {
+import arrow from "../../assets/arrow.png";
+
+function SortButtons({ onCategorySelect, showCategory, setShowCategory }) {
   const categories = [
     "Для члена",
     "Для вагины",
@@ -17,18 +19,25 @@ function SortButtons({ onCategorySelect }) {
     "Все для массажа",
   ];
 
+  const visibleCategory = showCategory ? `category-container show` : `category-container hide`;
+  const rotateArrow = showCategory ? `arrow` : `arrow  rotate`;
+
   return (
     <div className="align-category">
-      <button className="category-btn" onClick={() => onCategorySelect("")}>
+      <button className="category-btn" onClick={() => setShowCategory(!showCategory)}>
         <h1>Категории</h1>
+        <img src={arrow} className={rotateArrow} />
       </button>
 
-      <div className="category-container">
+      <div className={visibleCategory}>
         {categories.map((category) => (
           <button
             key={category}
             className="category-switcher-btn"
-            onClick={() => onCategorySelect(category)}
+            onClick={() => {
+              onCategorySelect(category);
+              setShowCategory(!showCategory);
+            }}
           >
             {category}
           </button>

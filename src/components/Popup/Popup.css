@@ -26,7 +26,7 @@
 }
 
 .popup-content {
-  background: #4f4091;
+  background: var(--main-color);
   color: rgb(238, 230, 255);
   border-radius: 5px;
 

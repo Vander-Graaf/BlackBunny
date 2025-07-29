@@ -15,6 +15,7 @@ function Home() {
   const [category, setCategory] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [showCategory, setShowCategory] = useState(false);
 
   const fetchProducts = async (page = 1, category = "") => {
     setLoading(true);
@@ -55,7 +56,11 @@ function Home() {
         </div>
       </div>
 
-      <SortButtons onCategorySelect={setCategory} />
+      <SortButtons
+        onCategorySelect={setCategory}
+        showCategory={showCategory}
+        setShowCategory={setShowCategory}
+      />
 
       <div className="align-cards">
         {loading ? (

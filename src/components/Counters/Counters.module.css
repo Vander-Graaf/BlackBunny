@@ -1,0 +1,83 @@
+.align {
+  bottom: 65px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.decrease_counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 23px;
+  background-color: var(--main-color);
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 5px 0px 0px 5px;
+  transition: 0.3s;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--main-color);
+  background-color: #191521;
+  border-bottom: 1px solid var(--main-color);
+  color: rgba(210, 197, 255, 0.89);
+  font-weight: bold;
+  width: 75px;
+
+  height: 21.5px;
+  font-size: 16px;
+  user-select: none;
+}
+
+.increase_counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 25px;
+  height: 23px;
+  background-color: var(--main-color);
+  border-radius: 0px 5px 5px 0px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.decrease_counter:hover,
+.increase_counter:hover {
+  background-color: #5a4aa3;
+}
+
+.increase_counter img,
+.decrease_counter img {
+  width: 15px;
+  height: 15px;
+}
+
+@media (max-width: 1024px) {
+  .counter {
+    width: 75px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .counter {
+    width: 65px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter {
+    width: 60px;
+    font-size: 15px;
+  }
+}

@@ -3,80 +3,122 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  position: relative;
   width: 100%;
   margin-top: 20px;
-  overflow: hidden;
 }
 
 .category-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+
   border: 0px;
-  background-color: #15121b;
-  height: 38px;
-  width: 350px;
+  background-color: #6259ba;
+
+  height: auto;
+  width: auto;
   font-size: 11px;
-  color: #b09eff;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  color: #ffffff;
   transition: 0.3s;
-  border-right: 5px #7a6ad547 solid;
-  border-left: 5px #7a6ad547 solid;
+  border-left: 3px solid rgba(255, 255, 255, 0);
+  border-right: 3px solid rgba(255, 255, 255, 0);
+  z-index: 5;
+}
+
+.category-btn:hover {
+  display: flex;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
+  background-color: #5959b8;
+}
+
+.category-btn h1 {
+  margin: 0px;
+}
+.arrow {
+  width: 20px;
+  margin-top: 3px;
+  transform: rotate(0deg);
+  transition: 0.4s ease-in-out;
+}
+.arrow.rotate {
+  transform: rotate(-180deg);
 }
 
 .category-container {
-  width: 95%;
-  min-width: 750px;
-  max-width: 1000px;
+  position: absolute;
+  top: 55px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   height: auto;
-  padding: 5px;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  padding: 8px;
   gap: 5px;
-  background-color: #15121b;
-  border-right: 5px #7a6ad547 solid;
-  border-left: 5px #7a6ad547 solid;
+  overflow: hidden;
+  background-color: #161325;
+  box-shadow: 0px 8px 10px 10px rgba(0, 0, 0, 0.724);
+  border: 4px #54469c solid;
+  border-top: 3px solid #54469c;
+  border-bottom: 3px solid #54469c;
 
-  transition: 0.3s;
+  z-index: 4;
+  transition: 0.4s ease-in-out;
+}
+
+.category-container.hide {
+  width: 0px;
+  opacity: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  border: 3px #54469c00 solid;
+  box-shadow: 0px 15px 15px 10px rgba(0, 0, 0, 0);
+}
+
+.category-container.show {
+  opacity: 1;
+  width: 300px;
 }
 
 .category-switcher-btn {
   flex: 1 0 auto;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 40px;
   padding-top: 10px;
   padding-bottom: 10px;
-
-  color: #ffffffcf;
-
-  font-size: 20px;
-  background-color: #252135;
+  white-space: nowrap;
+  color: #e7e4fd;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #322f5a;
   border: 0px;
   cursor: pointer;
   transition: 0.4s;
-  border-right: 4px #ffffff00 solid;
-  border-left: 4px #ffffff00 solid;
+  border-right: 3px #ffffff00 solid;
+  border-left: 3px #ffffff00 solid;
+  overflow: hidden;
+}
+.category-container .category-switcher-btn:nth-child(3n) {
+  grid-column: span 2;
+  justify-self: center;
+  width: 100%;
+
+  overflow: hidden;
 }
 
 .category-switcher-btn:hover {
   color: #ffffff;
-  background-color: #7a6ad5;
-  border-right: 4px #ffffff solid;
-  border-left: 4px #ffffff solid;
+  background-color: #6d5ec2;
+  border-right: 3px #ffffff solid;
+  border-left: 3px #ffffff solid;
 }
 
 @media (max-width: 1024px) {
   .category-btn {
-    height: 35px;
-    width: 270px;
-
     font-size: 11px;
-  }
-  .category-container {
-    width: 85%;
-    min-width: 550px;
   }
 
   .category-switcher-btn {
@@ -89,23 +131,14 @@
 
 @media (max-width: 768px) {
   .category-btn {
-    width: 230px;
-
     font-size: 11px;
   }
   .category-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     width: 300px;
     margin-left: 5px;
     margin-right: 5px;
-    min-width: 230px;
+
     gap: 7px;
-  }
-  .category-container .category-switcher-btn:nth-child(3n) {
-    grid-column: span 2;
-    justify-self: center;
-    width: 100%;
   }
 
   .category-switcher-btn {
@@ -118,26 +151,15 @@
 
 @media (max-width: 480px) {
   .category-btn {
-    width: 180px;
-    font-size: 10px;
-    border-right: 3px #7a6ad547 solid;
-    border-left: 3px #7a6ad547 solid;
+    font-size: 11px;
   }
   .category-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: fit-content;
     margin-left: 5px;
     margin-right: 5px;
-    min-width: 200px;
+
     gap: 7px;
     border-right: 3px #7a6ad547 solid;
     border-left: 3px #7a6ad547 solid;
-  }
-  .category-container .category-switcher-btn:nth-child(3n) {
-    grid-column: span 2;
-    justify-self: center;
-    width: 100%;
   }
 
   .category-switcher-btn {
