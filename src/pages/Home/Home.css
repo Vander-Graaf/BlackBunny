@@ -177,7 +177,7 @@
   width: 90%;
   border-radius: 20px;
   margin-top: 10px;
-  min-height: 150px;
+  height: max-content;
   user-select: none;
 }
 
@@ -186,7 +186,7 @@
   margin-top: 15px;
   justify-content: center;
   align-items: center;
-  height: auto;
+  height: 100%;
   background-color: #e0a1fd00;
   border-radius: 20px;
   overflow: hidden;
