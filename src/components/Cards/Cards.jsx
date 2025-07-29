@@ -16,11 +16,9 @@ function Cards({ products, loading }) {
   return (
     <>
       <div className="Cards">
-        {loading ? (
-          <img src={loadingIcon} alt="Loading..." className="loading-message" />
-        ) : (
-          products.map((product) => <Card product={product} />)
-        )}
+        {products.map((product) => (
+          <Card product={product} />
+        ))}
       </div>
     </>
   );
